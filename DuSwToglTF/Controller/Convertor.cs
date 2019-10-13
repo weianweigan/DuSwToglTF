@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DuSwToglTF.Model;
 using SharpGLTF.Geometry;
+using SharpGLTF.Materials;
 using SharpGLTF.Schema2;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
@@ -91,12 +92,25 @@ namespace DuSwToglTF.Controller
             object[] comps = swAssDoc.GetComponents(false);
             foreach (Component2 item in comps)
             {
-               object[] bodys = item.GetBodies2((int)swBodyType_e.swAllBodies);
+                double[] MaterialValue = item.MaterialPropertyValues;
+                if (MaterialValue == null)
+                {
+                    ModelDoc2 swCompModel = item.GetModelDoc2();
+                    if (swCompModel!= null)
+                    {
+                        MaterialValue = swCompModel.MaterialPropertyValues;
+                    }
+                }
+                object[] bodys = item.GetBodies2((int)swBodyType_e.swAllBodies);
                 if (bodys != null)
                 {
                     foreach (Body2 swBody in bodys)
                     {
                         var bodymodel = GetglTFBodyModel(swBody);
+                        if (bodymodel.BodyMaterialValue == null && MaterialValue !=null)
+                        {
+                            bodymodel.BodyMaterialValue = MaterialValue;
+                        }
                         bodymodel.SWMathTran = item.Transform2;
                         Model.BodyList.Add(bodymodel);
                     }
@@ -108,29 +122,40 @@ namespace DuSwToglTF.Controller
         public List<string> SaveAs(SWglTFModel Model, string Path, string Name)
         {
             var scene = new SharpGLTF.Scenes.SceneBuilder();
-
+            
             foreach (var Body in Model.BodyList)
             {
 
-              
+                //创建一个网格
+                var Mesh = new MeshBuilder<VERTEX>("mesh");
+
+
+                var material = (Body.MaterialBuilder == null ? Model.MaterialBuilder : Body.MaterialBuilder);
+                if (material == null)
+                {
+                    material = new MaterialBuilder()
+            .WithDoubleSide(true)
+            .WithMetallicRoughnessShader()
+            .WithChannelParam("BaseColor", new Vector4(1, 0, 0, 1));
+                }
+                //确定材质属性
+                var prim = Mesh.UsePrimitive(material
+                    );
 
                 foreach (var face in Body.FaceList)
                 {
-                    var Mesh = new MeshBuilder<VERTEX>("mesh");
-
-    
-                    var prim = Mesh.UsePrimitive((Body.MaterialBuilder == null ? Model.MaterialBuilder : Body.MaterialBuilder));
-
-
+                    
                     foreach (var tri in face.FaceTri)
                     {
                         prim.AddTriangle(tri.a, tri.b, tri.c);
                     }
-
-                    scene.AddMesh(Mesh, Body.BodyTransform);
-
                 }
+
+                scene.AddMesh(Mesh, Body.BodyTransform);
+
             }
+
+
             var model = scene.ToSchema2();
             model.SaveAsWavefront(Path + "\\" + Name + ".obj");
             model.SaveGLB(Path + "\\" + Name + ".glb");
@@ -141,6 +166,40 @@ namespace DuSwToglTF.Controller
                 Path + "\\" + Name + ".glb",
                 Path + "\\" + Name + ".gltf"
             };
+        }
+        public async Task<List<string>> SaveAsAsync(SWglTFModel Model, string Path, string Name)
+        {
+            var scene = new SharpGLTF.Scenes.SceneBuilder();
+
+            foreach (var Body in Model.BodyList)
+            {
+                foreach (var face in Body.FaceList)
+                {
+                    var Mesh = new MeshBuilder<VERTEX>("mesh");
+                    //确定材质属性
+                    var prim = Mesh.UsePrimitive(
+                        (Body.MaterialBuilder == null ? Model.MaterialBuilder : Body.MaterialBuilder) 
+                      );
+
+
+                    foreach (var tri in face.FaceTri)
+                    {
+                        prim.AddTriangle(tri.a, tri.b, tri.c);
+                    }
+                    scene.AddMesh(Mesh, Body.BodyTransform);
+                }
+            }
+            var model = scene.ToSchema2();
+            model.SaveAsWavefront(Path + "\\" + Name + ".obj");
+            model.SaveGLB(Path + "\\" + Name + ".glb");
+            model.SaveGLTF(Path + "\\" + Name + ".gltf");
+            List<string> res = new List<string>()
+            {
+                Path + "\\" + Name + ".obj",
+                Path + "\\" + Name + ".glb",
+                Path + "\\" + Name + ".gltf"
+            };
+            return res;
         }
         #endregion
         #region 私有方法

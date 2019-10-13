@@ -105,16 +105,27 @@ namespace DuSwToglTF
         {
             doc.DestroyNotify += new DPartDocEvents_DestroyNotifyEventHandler(OnDestroy);
             doc.NewSelectionNotify += new DPartDocEvents_NewSelectionNotifyEventHandler(OnNewSelection);
-
+            doc.FileSavePostNotify += Doc_FileSavePostNotify; 
             ConnectModelViews();
 
             return true;
         }
 
+        private int Doc_FileSavePostNotify(int saveType, string FileName)
+        {
+            if (SwAddin.TaskPanelControl != null)
+            {
+                SwAddin.TaskPanelControl.viewmodel.SetModelDoc();
+            }
+            return 0;
+        }
+
+
         override public bool DetachEventHandlers()
         {
             doc.DestroyNotify -= new DPartDocEvents_DestroyNotifyEventHandler(OnDestroy);
             doc.NewSelectionNotify -= new DPartDocEvents_NewSelectionNotifyEventHandler(OnNewSelection);
+            doc.FileSavePostNotify -= Doc_FileSavePostNotify;
 
             DisconnectModelViews();
 
@@ -155,9 +166,20 @@ namespace DuSwToglTF
             doc.ComponentStateChangeNotify += new DAssemblyDocEvents_ComponentStateChangeNotifyEventHandler(ComponentStateChangeNotify);
             doc.ComponentVisualPropertiesChangeNotify += new DAssemblyDocEvents_ComponentVisualPropertiesChangeNotifyEventHandler(ComponentVisualPropertiesChangeNotify);
             doc.ComponentDisplayStateChangeNotify += new DAssemblyDocEvents_ComponentDisplayStateChangeNotifyEventHandler(ComponentDisplayStateChangeNotify);
+
+            doc.FileSavePostNotify += Doc_FileSavePostNotify;
             ConnectModelViews();
 
             return true;
+        }
+
+        private int Doc_FileSavePostNotify(int saveType, string FileName)
+        {
+            if (SwAddin.TaskPanelControl != null)
+            {
+                SwAddin.TaskPanelControl.viewmodel.SetModelDoc();
+            }
+            return 0;
         }
 
         override public bool DetachEventHandlers()
@@ -168,6 +190,8 @@ namespace DuSwToglTF
             doc.ComponentStateChangeNotify -= new DAssemblyDocEvents_ComponentStateChangeNotifyEventHandler(ComponentStateChangeNotify);
             doc.ComponentVisualPropertiesChangeNotify -= new DAssemblyDocEvents_ComponentVisualPropertiesChangeNotifyEventHandler(ComponentVisualPropertiesChangeNotify);
             doc.ComponentDisplayStateChangeNotify -= new DAssemblyDocEvents_ComponentDisplayStateChangeNotifyEventHandler(ComponentDisplayStateChangeNotify);
+            doc.FileSavePostNotify -= Doc_FileSavePostNotify;
+
             DisconnectModelViews();
 
             userAddin.DetachModelEventHandler(document);

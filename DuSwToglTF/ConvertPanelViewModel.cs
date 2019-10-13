@@ -81,7 +81,7 @@ namespace DuSwToglTF
         {
             get
             {
-                if (_ChoosePathCommand != null)
+                if (_ChoosePathCommand == null)
                 {
                     _ChoosePathCommand = new RelayCommand(ChoosePathClick);
                 }
@@ -116,6 +116,11 @@ namespace DuSwToglTF
             if (!System.IO.Directory.Exists(FilePath))
             {
                 swApp.SendMsgToUser("当前路径不存在：" + FilePath);
+                return;
+            }
+            if (FilePath.Contains("-") || FileName.Contains("-"))
+            {
+                swApp.SendMsgToUser("-为非法字符，路径或者文件民包含-字符，请修改路径或者文件名后重新保存");
                 return;
             }
             try

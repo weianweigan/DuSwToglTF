@@ -173,18 +173,17 @@
     </Compile>
     <Compile Include="ConvertPanelViewModel.cs" />
     <Compile Include="EventHandling.cs" />
+    <Compile Include="Lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lang.resx</DependentUpon>
+    </Compile>
     <Compile Include="Model\SWglTFModel.cs" />
-    <Compile Include="PMPHandler.cs" />
     <Compile Include="SwAddin.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UserPMPage.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <EmbeddedResource Include="ToolbarLarge.bmp" />
-    <EmbeddedResource Include="ToolbarSmall.bmp" />
-    <EmbeddedResource Include="MainIconLarge.bmp" />
-    <EmbeddedResource Include="MainIconSmall.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="ConvertPanel.xaml">
@@ -194,6 +193,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gltf.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Lang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

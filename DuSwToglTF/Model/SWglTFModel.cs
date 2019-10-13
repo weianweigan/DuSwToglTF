@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using SharpGLTF.Materials;
 using SolidWorks.Interop.sldworks;
+/* TODO：材料属性的光照度等
+ * TODO:网格角度
+ */
+
 
 namespace DuSwToglTF.Model
 {
@@ -69,29 +73,28 @@ namespace DuSwToglTF.Model
         {
             get
             {
+
+                if (PartMaterialValue != null)
+                {
+                    //if (PartMaterialValue[0] == 1 && PartMaterialValue[1] == 1 && PartMaterialValue[2] == 1)
+                    //{
+                    //    return InitMaterial;
+                    //}
+                    //else
+                    //{
+                    _MaterialBuilder = new MaterialBuilder()
+              .WithDoubleSide(true)
+              .WithChannelParam(KnownChannels.BaseColor, new System.Numerics.Vector4(
+                 Convert.ToSingle(PartMaterialValue[0]),
+                 Convert.ToSingle(PartMaterialValue[1]),
+                 Convert.ToSingle(PartMaterialValue[2]),
+                 1));
+                    // }
+                    
+                }
                 if (_MaterialBuilder == null)
                 {
-                    if (PartMaterialValue != null)
-                    {
-                        //if (PartMaterialValue[0] == 1 && PartMaterialValue[1] == 1 && PartMaterialValue[2] == 1)
-                        //{
-                        //    return InitMaterial;
-                        //}
-                        //else
-                        //{
-                                _MaterialBuilder = new MaterialBuilder()
-                          .WithDoubleSide(true)
-                          .WithChannelParam(KnownChannels.BaseColor, new System.Numerics.Vector4(
-                             Convert.ToSingle(PartMaterialValue[0]),
-                             Convert.ToSingle(PartMaterialValue[1]),
-                             Convert.ToSingle(PartMaterialValue[2]),
-                             1));
-                       // }
-                    }
-                    else
-                    {
-                        return InitMaterial;
-                    }
+                    _MaterialBuilder = InitMaterial;
                 }
                 return _MaterialBuilder;
             }
@@ -102,7 +105,7 @@ namespace DuSwToglTF.Model
         public List<BodyglTFModel> BodyList = new List<BodyglTFModel>();
         #region 私有字段
         private Matrix4x4 _PartTransform;
-        private MaterialBuilder _MaterialBuilder;
+        private MaterialBuilder _MaterialBuilder = null;
         #endregion
     }
     /// <summary>
@@ -155,8 +158,7 @@ namespace DuSwToglTF.Model
         {
             get
             {
-                if(_MaterialBuilder == null)
-                {
+             
                     if (BodyMaterialValue != null)
                     {
                         _MaterialBuilder = new MaterialBuilder()
@@ -167,8 +169,10 @@ namespace DuSwToglTF.Model
                            Convert.ToSingle(BodyMaterialValue[2]),
                            1));
                     }
-                }
-                return _MaterialBuilder;
+              
+                    return _MaterialBuilder;
+                
+
             }
         }
         /// <summary>
@@ -176,7 +180,7 @@ namespace DuSwToglTF.Model
         /// </summary>
         public List<FaceglTFModel> FaceList = new List<FaceglTFModel>();
 
-        private MaterialBuilder _MaterialBuilder;
+        private MaterialBuilder _MaterialBuilder = null;
 
     }
 
@@ -187,14 +191,13 @@ namespace DuSwToglTF.Model
         /// </summary>
         public double[] FaceMaterialValue;
 
-        private MaterialBuilder _MaterialBuilder;
+        private MaterialBuilder _MaterialBuilder = null;
         //[ R, G, B, Ambient, Diffuse, Specular, Shininess, Transparency, Emission ]
         public MaterialBuilder MaterialBuilder
         {
             get
             {
-                if (_MaterialBuilder == null)
-                {
+                
                     if (FaceMaterialValue != null)
                     {
                         _MaterialBuilder = new MaterialBuilder()
@@ -205,7 +208,7 @@ namespace DuSwToglTF.Model
                            Convert.ToSingle(FaceMaterialValue[2]),
                            1));
                     }
-                }
+                
                 return _MaterialBuilder;
             }
         }

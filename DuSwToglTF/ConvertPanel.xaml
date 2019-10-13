@@ -40,9 +40,9 @@
                     <RowDefinition Height="16"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="0,0,-0.4,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,0,-0.4,0">
                     <StackPanel Grid.Row="0" Margin="0" Grid.RowSpan="2">
-                        <GroupBox Header="保存路径" >
+                        <GroupBox Header="保存路径" ToolTip="Save Path">
                             <Grid  Margin="0,10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="43*"/>
@@ -53,7 +53,7 @@
                                     <ColumnDefinition Width="21*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBox Text="{Binding FileName}"></TextBox>
-                                <Label Grid.Row="0" Grid.Column="1">文件名</Label>
+                                <Label Grid.Row="0" Grid.Column="1" ToolTip="FileName">文件名</Label>
                                 <TextBox Text="{Binding FilePath}" Grid.Column="0" Margin="2,10"  Grid.Row="1"/>
                                 <Button Grid.Column="1" Command="{Binding ChoosePathCommand}" Content="..." Margin="0,10" Height="30" ToolTip="选择保存路径" Grid.Row="1"/>
                             </Grid>
@@ -61,7 +61,7 @@
                         <Button Margin="10,2" Command="{Binding SaveCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}"  Click="Button_Click">
                             <StackPanel Orientation="Horizontal">
                                 <ProgressBar Margin="0,0" materialDesign:ColorZoneAssist.Mode="PrimaryMid" IsIndeterminate="{Binding IsInProgress}" VerticalAlignment="Top" Value="{Binding ProgressBarValue}" Style="{StaticResource MaterialDesignCircularProgressBar}" />
-                                <Label>保存</Label>
+                                <Label>保存(Save)</Label>
                             </StackPanel>
                         </Button>
                         <StackPanel Orientation="Horizontal">
@@ -77,11 +77,11 @@
                                     <StackPanel Orientation="Horizontal">
 
                                         <ToggleButton HorizontalAlignment="Left" Margin="30,0" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="{Binding IsOpenFile}"
-                                  ToolTip="保存完成后打开文件">
+                                  ToolTip="保存完成后打开文件(Open gltf file after saved)">
                                             <materialDesign:PackIcon Kind="OpenInNew"></materialDesign:PackIcon>
                                         </ToggleButton>
                                         <ToggleButton HorizontalAlignment="Left" Margin="30,0" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="{Binding IsOpenFolder}"
-                                  ToolTip="保存完成后打开文件夹">
+                                  ToolTip="保存完成后打开文件夹(Open folder after saved)">
                                             <materialDesign:PackIcon Kind="OpenInNew"></materialDesign:PackIcon>
                                         </ToggleButton>
                                     </StackPanel>
@@ -134,10 +134,11 @@
                         </GroupBox.Header>
                         <StackPanel>
                             <TextBlock HorizontalAlignment="Center" FontSize="15" Margin="5">
-                    DuSwToglTF version0.0.1
+                    DuSwToglTF V0.0.1 Preview
                             </TextBlock>
                             <TextBlock Margin="4">1.支持格式:sldprt,sldasm转换为glTF文件</TextBlock>
-                            <TextBlock Margin="4">2.包含几何信息和颜色信息</TextBlock>
+                            <TextBlock Margin="4" TextWrapping="Wrap">2.对多实体零件或者装配体的输出未进行测试,可能产生错误</TextBlock>
+                            <TextBlock Margin="4">2.包含几何信息和颜色信息,单一面的颜色信息暂未考虑</TextBlock>
                             <TextBlock Margin="4">3.暂未支持光照度,场景，动画等功能</TextBlock>
                         </StackPanel>
                     </GroupBox>
@@ -163,6 +164,14 @@
                             <TextBlock>
                                 <Hyperlink></Hyperlink>
                             </TextBlock>
+                            <TextBlock Margin="5">Code by DuDuDu</TextBlock>
+                            <TextBlock Margin="5">Contact me:1831197727@qq.com</TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Project:</Label>
+                                <TextBlock VerticalAlignment="Center">
+                                <Hyperlink>https://github.com/weianweigan/DuSwToglTF</Hyperlink>
+                                </TextBlock>
+                            </StackPanel>
                         </StackPanel>
                     </GroupBox>
                 </materialDesign:Card>

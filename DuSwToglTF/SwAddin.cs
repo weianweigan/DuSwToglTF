@@ -31,6 +31,9 @@ namespace DuSwToglTF
         int addinID = 0;
         BitmapHandler iBmp;
 
+        ElementHost eleHost = new ElementHost();
+        public static ConvertPanel TaskPanelControl = null;
+
         public const int mainCmdGroupID = 5;
         public const int mainItemID1 = 0;
         public const int mainItemID2 = 1;
@@ -42,10 +45,7 @@ namespace DuSwToglTF
         SolidWorks.Interop.sldworks.SldWorks SwEventPtr = null;
         #endregion
 
-        #region Property Manager Variables
-        UserPMPage ppage = null;
-        #endregion
-
+        
 
         // Public Properties
         public ISldWorks SwApp
@@ -154,10 +154,7 @@ namespace DuSwToglTF
             //Setup callbacks
             iSwApp.SetAddinCallbackInfo(0, this, addinID);
 
-            #region Setup the Command Manager
-            //iCmdMgr = iSwApp.GetCommandManager(cookie);
-            //AddCommandMgr();
-            #endregion
+        
 
             #region 
             AddTaskPanel();
@@ -169,33 +166,18 @@ namespace DuSwToglTF
             AttachEventHandlers();
             #endregion
 
-            #region Setup Sample Property Manager
-            //AddPMP();
-            #endregion
+  
 
             return true;
         }
-        ElementHost eleHost = new ElementHost();
-        ConvertPanel TaskPanelControl = null;
-        private void AddTaskPanel()
-        {
-            ITaskpaneView pTaskPanView;
-            pTaskPanView = iSwApp.CreateTaskpaneView2("", "将Solidworks文件转换未glTF");
-            if (TaskPanelControl == null)
-            {
-                TaskPanelControl = new ConvertPanel(SwApp);
-                eleHost.Child = TaskPanelControl;
-            }
-            pTaskPanView.DisplayWindowFromHandlex64(eleHost.Handle.ToInt64());
-        }
-
+      
+      
         public bool DisconnectFromSW()
         {
-            RemoveCommandMgr();
-            RemovePMP();
+           
             DetachEventHandlers();
 
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(iCmdMgr);
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(iCmdMgr);
             iCmdMgr = null;
             System.Runtime.InteropServices.Marshal.ReleaseComObject(iSwApp);
             iSwApp = null;
@@ -211,240 +193,20 @@ namespace DuSwToglTF
         #endregion
 
         #region UI Methods
-        public void AddCommandMgr()
+        private void AddTaskPanel()
         {
-            ICommandGroup cmdGroup;
-            if (iBmp == null)
-                iBmp = new BitmapHandler();
-            Assembly thisAssembly;
-            int cmdIndex0, cmdIndex1;
-            string Title = "C# Addin", ToolTip = "C# Addin";
-
-
-            int[] docTypes = new int[]{(int)swDocumentTypes_e.swDocASSEMBLY,
-                                       (int)swDocumentTypes_e.swDocDRAWING,
-                                       (int)swDocumentTypes_e.swDocPART};
-
-            thisAssembly = System.Reflection.Assembly.GetAssembly(this.GetType());
-
-
-            int cmdGroupErr = 0;
-            bool ignorePrevious = false;
-
-            object registryIDs;
-            //get the ID information stored in the registry
-            bool getDataResult = iCmdMgr.GetGroupDataFromRegistry(mainCmdGroupID, out registryIDs);
-
-            int[] knownIDs = new int[2] { mainItemID1, mainItemID2 };
-
-            if (getDataResult)
+            ITaskpaneView pTaskPanView;
+            pTaskPanView = iSwApp.CreateTaskpaneView2("gltf.bmp", "将Solidworks文件转换为glTF");
+            if (TaskPanelControl == null)
             {
-                if (!CompareIDs((int[])registryIDs, knownIDs)) //if the IDs don't match, reset the commandGroup
-                {
-                    ignorePrevious = true;
-                }
+                SwAddin.TaskPanelControl = new ConvertPanel(SwApp);
+                eleHost.Child = TaskPanelControl;
             }
-
-            cmdGroup = iCmdMgr.CreateCommandGroup2(mainCmdGroupID, Title, ToolTip, "", -1, ignorePrevious, ref cmdGroupErr);
-            cmdGroup.LargeIconList = iBmp.CreateFileFromResourceBitmap("DuSwToglTF.ToolbarLarge.bmp", thisAssembly);
-            cmdGroup.SmallIconList = iBmp.CreateFileFromResourceBitmap("DuSwToglTF.ToolbarSmall.bmp", thisAssembly);
-            cmdGroup.LargeMainIcon = iBmp.CreateFileFromResourceBitmap("DuSwToglTF.MainIconLarge.bmp", thisAssembly);
-            cmdGroup.SmallMainIcon = iBmp.CreateFileFromResourceBitmap("DuSwToglTF.MainIconSmall.bmp", thisAssembly);
-
-            int menuToolbarOption = (int)(swCommandItemType_e.swMenuItem | swCommandItemType_e.swToolbarItem);
-            cmdIndex0 = cmdGroup.AddCommandItem2("CreateCube", -1, "Create a cube", "Create cube", 0, "CreateCube", "", mainItemID1, menuToolbarOption);
-            cmdIndex1 = cmdGroup.AddCommandItem2("Show PMP", -1, "Display sample property manager", "Show PMP", 2, "ShowPMP", "EnablePMP", mainItemID2, menuToolbarOption);
-
-            cmdGroup.HasToolbar = true;
-            cmdGroup.HasMenu = true;
-            cmdGroup.Activate();
-
-            bool bResult;
-
-
-
-            FlyoutGroup flyGroup = iCmdMgr.CreateFlyoutGroup(flyoutGroupID, "Dynamic Flyout", "Flyout Tooltip", "Flyout Hint",
-              cmdGroup.SmallMainIcon, cmdGroup.LargeMainIcon, cmdGroup.SmallIconList, cmdGroup.LargeIconList, "FlyoutCallback", "FlyoutEnable");
-
-
-            flyGroup.AddCommandItem("FlyoutCommand 1", "test", 0, "FlyoutCommandItem1", "FlyoutEnableCommandItem1");
-
-            flyGroup.FlyoutType = (int)swCommandFlyoutStyle_e.swCommandFlyoutStyle_Simple;
-
-
-            foreach (int type in docTypes)
-            {
-                CommandTab cmdTab;
-
-                cmdTab = iCmdMgr.GetCommandTab(type, Title);
-
-                if (cmdTab != null & !getDataResult | ignorePrevious)//if tab exists, but we have ignored the registry info (or changed command group ID), re-create the tab.  Otherwise the ids won't matchup and the tab will be blank
-                {
-                    bool res = iCmdMgr.RemoveCommandTab(cmdTab);
-                    cmdTab = null;
-                }
-
-                //if cmdTab is null, must be first load (possibly after reset), add the commands to the tabs
-                if (cmdTab == null)
-                {
-                    cmdTab = iCmdMgr.AddCommandTab(type, Title);
-
-                    CommandTabBox cmdBox = cmdTab.AddCommandTabBox();
-
-                    int[] cmdIDs = new int[3];
-                    int[] TextType = new int[3];
-
-                    cmdIDs[0] = cmdGroup.get_CommandID(cmdIndex0);
-
-                    TextType[0] = (int)swCommandTabButtonTextDisplay_e.swCommandTabButton_TextHorizontal;
-
-                    cmdIDs[1] = cmdGroup.get_CommandID(cmdIndex1);
-
-                    TextType[1] = (int)swCommandTabButtonTextDisplay_e.swCommandTabButton_TextHorizontal;
-
-                    cmdIDs[2] = cmdGroup.ToolbarId;
-
-                    TextType[2] = (int)swCommandTabButtonTextDisplay_e.swCommandTabButton_TextHorizontal | (int)swCommandTabButtonFlyoutStyle_e.swCommandTabButton_ActionFlyout;
-
-                    bResult = cmdBox.AddCommands(cmdIDs, TextType);
-
-
-
-                    CommandTabBox cmdBox1 = cmdTab.AddCommandTabBox();
-                    cmdIDs = new int[1];
-                    TextType = new int[1];
-
-                    cmdIDs[0] = flyGroup.CmdID;
-                    TextType[0] = (int)swCommandTabButtonTextDisplay_e.swCommandTabButton_TextBelow | (int)swCommandTabButtonFlyoutStyle_e.swCommandTabButton_ActionFlyout;
-
-                    bResult = cmdBox1.AddCommands(cmdIDs, TextType);
-
-                    cmdTab.AddSeparator(cmdBox1, cmdIDs[0]);
-
-                }
-
-            }
-            thisAssembly = null;
-
+            pTaskPanView.DisplayWindowFromHandlex64(eleHost.Handle.ToInt64());
         }
-
-        public void RemoveCommandMgr()
-        {
-            //iBmp.Dispose();
-
-            //iCmdMgr.RemoveCommandGroup(mainCmdGroupID);
-            //iCmdMgr.RemoveFlyoutGroup(flyoutGroupID);
-        }
-
-        public bool CompareIDs(int[] storedIDs, int[] addinIDs)
-        {
-            List<int> storedList = new List<int>(storedIDs);
-            List<int> addinList = new List<int>(addinIDs);
-
-            addinList.Sort();
-            storedList.Sort();
-
-            if (addinList.Count != storedList.Count)
-            {
-                return false;
-            }
-            else
-            {
-
-                for (int i = 0; i < addinList.Count; i++)
-                {
-                    if (addinList[i] != storedList[i])
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
-        public Boolean AddPMP()
-        {
-            ppage = new UserPMPage(this);
-            return true;
-        }
-
-        public Boolean RemovePMP()
-        {
-            ppage = null;
-            return true;
-        }
-
         #endregion
 
-        #region UI Callbacks
-        public void CreateCube()
-        {
-            //make sure we have a part open
-            string partTemplate = iSwApp.GetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplatePart);
-            if ((partTemplate != null) && (partTemplate != ""))
-            {
-                IModelDoc2 modDoc = (IModelDoc2)iSwApp.NewDocument(partTemplate, (int)swDwgPaperSizes_e.swDwgPaperA2size, 0.0, 0.0);
 
-                modDoc.InsertSketch2(true);
-                modDoc.SketchRectangle(0, 0, 0, .1, .1, .1, false);
-                //Extrude the sketch
-                IFeatureManager featMan = modDoc.FeatureManager;
-                featMan.FeatureExtrusion(true,
-                    false, false,
-                    (int)swEndConditions_e.swEndCondBlind, (int)swEndConditions_e.swEndCondBlind,
-                    0.1, 0.0,
-                    false, false,
-                    false, false,
-                    0.0, 0.0,
-                    false, false,
-                    false, false,
-                    true,
-                    false, false);
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("There is no part template available. Please check your options and make sure there is a part template selected, or select a new part template.");
-            }
-        }
-
-
-        public void ShowPMP()
-        {
-            if (ppage != null)
-                ppage.Show();
-        }
-
-        public int EnablePMP()
-        {
-            if (iSwApp.ActiveDoc != null)
-                return 1;
-            else
-                return 0;
-        }
-
-        public void FlyoutCallback()
-        {
-            FlyoutGroup flyGroup = iCmdMgr.GetFlyoutGroup(flyoutGroupID);
-            flyGroup.RemoveAllCommandItems();
-
-            flyGroup.AddCommandItem(System.DateTime.Now.ToLongTimeString(), "test", 0, "FlyoutCommandItem1", "FlyoutEnableCommandItem1");
-
-        }
-        public int FlyoutEnable()
-        {
-            return 1;
-        }
-
-        public void FlyoutCommandItem1()
-        {
-            iSwApp.SendMsgToUser("Flyout command 1");
-        }
-
-        public int FlyoutEnableCommandItem1()
-        {
-            return 1;
-        }
-        #endregion
 
         #region Event Methods
         public bool AttachEventHandlers()
@@ -516,6 +278,7 @@ namespace DuSwToglTF
 
             if (!openDocs.Contains(modDoc))
             {
+              
                 switch (modDoc.GetType())
                 {
                     case (int)swDocumentTypes_e.swDocPART:
