@@ -10,6 +10,9 @@ using SharpGLTF.Schema2;
 using System;
 using System.IO;
 using System.Diagnostics;
+using System.Reflection;
+using MaterialDesignColors;
+using MaterialDesignThemes;
 
 namespace DuSwToglTF
 {
@@ -22,6 +25,9 @@ namespace DuSwToglTF
         public ConvertPanelViewModel viewmodel;
         public ConvertPanel(SolidWorks.Interop.sldworks.ISldWorks App)
         {
+            //加载MaterialDesign 程序集
+            MaterialDesignColors.SwatchesProvider SP = new SwatchesProvider();
+
             InitializeComponent();
            
             swApp = App;
@@ -30,7 +36,33 @@ namespace DuSwToglTF
 
             DataContext = viewmodel;
         }
+        public static string RootPath
+        {
+            get
+            {
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.GetDirectoryName(path);
+            }
+        }
+        public static void PreloadDlls()
+        {
 
+            var assemblyList = new string[]
+            {
+                "MaterialDesignColors.dll",
+                "MaterialDesignThemes.Wpf.dll"
+            };
+
+            foreach (var assembly in assemblyList)
+            {
+
+                var assemblyPath = (RootPath + "\\" + assembly);
+                if (File.Exists(assemblyPath))
+                    Assembly.LoadFrom(assemblyPath);
+            }
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
         //    List<FaceVertexModel> faceVertexList = new List<FaceVertexModel>();

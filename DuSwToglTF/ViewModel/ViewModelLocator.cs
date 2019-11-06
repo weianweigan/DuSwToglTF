@@ -16,7 +16,6 @@ using CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 
-
 namespace DuSwToglTF.ViewModel
 {
     /// <summary>

@@ -195,14 +195,23 @@ namespace DuSwToglTF
         #region UI Methods
         private void AddTaskPanel()
         {
-            ITaskpaneView pTaskPanView;
-            pTaskPanView = iSwApp.CreateTaskpaneView2("gltf.bmp", "将Solidworks文件转换为glTF");
-            if (TaskPanelControl == null)
+            try
             {
-                SwAddin.TaskPanelControl = new ConvertPanel(SwApp);
-                eleHost.Child = TaskPanelControl;
+                DuSwToglTF.ConvertPanel.PreloadDlls();
+
+                ITaskpaneView pTaskPanView;
+                pTaskPanView = iSwApp.CreateTaskpaneView2("gltf.bmp", "将Solidworks文件转换为glTF");
+                if (TaskPanelControl == null)
+                {
+                    SwAddin.TaskPanelControl = new ConvertPanel(SwApp);
+                    eleHost.Child = TaskPanelControl;
+                }
+                pTaskPanView.DisplayWindowFromHandlex64(eleHost.Handle.ToInt64());
             }
-            pTaskPanView.DisplayWindowFromHandlex64(eleHost.Handle.ToInt64());
+            catch (Exception ex)
+            {
+                SwApp.SendMsgToUser(ex.ToString());
+            }
         }
         #endregion
 
