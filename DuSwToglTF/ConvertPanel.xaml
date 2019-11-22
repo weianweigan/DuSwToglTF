@@ -4,32 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DuSwToglTF"
-             mc:Ignorable="d" 
-             
-                          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-       
-
-              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-            Background="{DynamicResource MaterialDesignPaper}"
+             mc:Ignorable="d"              
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
+             xmlns:hc="https://handyorg.github.io/handycontrol"
             TextElement.FontWeight="Medium"
             TextElement.FontSize="10"
-            FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
- 
-             
-             d:DesignHeight="600" d:DesignWidth="300">
+            FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"             
+          d:DesignHeight="600" d:DesignWidth="300">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
     <TabControl>
         <TabItem>
             <TabItem.Header>
-                <materialDesign:PackIcon Kind="Printer3d" ToolTip=""></materialDesign:PackIcon>
+                <Image Source="pack://application:,,,/DuSwToglTF;component/Resources/Main.png" Width="16" Height="16"></Image>
             </TabItem.Header>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -42,7 +35,10 @@
                 </Grid.RowDefinitions>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,0,-0.4,0">
                     <StackPanel Grid.Row="0" Margin="0" Grid.RowSpan="2">
-                        <GroupBox Header="保存路径" ToolTip="Save Path">
+                        <GroupBox Margin="0,10"  ToolTip="Save Path">
+                            <GroupBox.Header >
+                                <Label>保存路径</Label>
+                            </GroupBox.Header>
                             <Grid  Margin="0,10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="43*"/>
@@ -58,79 +54,65 @@
                                 <Button Grid.Column="1" Command="{Binding ChoosePathCommand}" Content="..." Margin="0,10" Height="30" ToolTip="选择保存路径" Grid.Row="1"/>
                             </Grid>
                         </GroupBox>
-                        <Button Margin="10,2" Command="{Binding SaveCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}"  Click="Button_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <ProgressBar Margin="0,0" materialDesign:ColorZoneAssist.Mode="PrimaryMid" IsIndeterminate="{Binding IsInProgress}" VerticalAlignment="Top" Value="{Binding ProgressBarValue}" Style="{StaticResource MaterialDesignCircularProgressBar}" />
-                                <Label>保存(Save)</Label>
-                            </StackPanel>
+                        <Button Margin="10,2" Command="{Binding SaveCommand}"   Click="Button_Click">
+                           保存(Save)
                         </Button>
-                        <StackPanel Orientation="Horizontal">
-
-                            <Label Content="{Binding ProgressText}"></Label>
-                        </StackPanel>
-                        <materialDesign:Card UniformCornerRadius="5" Margin="2">
-                            <GroupBox>
-                                <GroupBox.Header>
-                                    <materialDesign:PackIcon Kind="Settings" ToolTip="设置"></materialDesign:PackIcon>
-                                </GroupBox.Header>
+                        <!--<StackPanel Orientation="Horizontal">
+                            <ProgressBar HorizontalAlignment="Stretch" Width="295"></ProgressBar>
+                        </StackPanel>-->
+                        <Grid  Margin="2">
+                            <hc:Card Header="选项">
                                 <StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Margin="0,5" Orientation="Horizontal">
 
-                                        <ToggleButton HorizontalAlignment="Left" Margin="30,0" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="{Binding IsOpenFile}"
+                                        <CheckBox HorizontalAlignment="Left" Margin="10,0"  IsChecked="{Binding IsOpenFile}"
                                   ToolTip="保存完成后打开文件(Open gltf file after saved)">
-                                            <materialDesign:PackIcon Kind="OpenInNew"></materialDesign:PackIcon>
-                                        </ToggleButton>
-                                        <ToggleButton HorizontalAlignment="Left" Margin="30,0" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="{Binding IsOpenFolder}"
+                                        保存完打开
+                                        </CheckBox>
+                                        <CheckBox HorizontalAlignment="Left" Margin="10,0"  IsChecked="{Binding IsOpenFolder}"
                                   ToolTip="保存完成后打开文件夹(Open folder after saved)">
-                                            <materialDesign:PackIcon Kind="OpenInNew"></materialDesign:PackIcon>
-                                        </ToggleButton>
+                                            保存完成后打开文件夹
+                                        </CheckBox>
                                     </StackPanel>
-                                    <Slider VerticalAlignment="Center"
+                                    <Slider Margin="0,10" VerticalAlignment="Center"
   Minimum="0"
   Maximum="100"
-  Style="{StaticResource MaterialDesignDiscreteSlider}"
+  
   ToolTip="网格精度(待实现)"
   Value="50"
   />
                                 </StackPanel>
-                            </GroupBox>
-                        </materialDesign:Card>
+                            </hc:Card>
+                        </Grid>
                         <GroupBox Header="批量转换" Visibility="Collapsed">
-                            <materialDesign:DialogHost >
-                                <Grid>
-                                    <TextBox></TextBox>
-                                </Grid>
-                            </materialDesign:DialogHost>
                         </GroupBox>
                     </StackPanel>
                 </ScrollViewer>
-
                 <GridSplitter Grid.Row="1" Background="AliceBlue" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Stretch" Margin="0,7,-0.4,7"  />
                 <Grid Grid.Row="2" Margin="0,0,-0.4,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="14*"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <materialDesign:Card>
+                    <!--<materialDesign:Card>
                         <GroupBox Header="批量转换(开发中)" Margin="5,10">
                             <StackPanel>
 
                             </StackPanel>
                         </GroupBox>
-                    </materialDesign:Card>
-
+                    </materialDesign:Card>-->
                 </Grid>
             </Grid>
         </TabItem>
         <TabItem>
             <TabItem.Header>
-                <materialDesign:PackIcon Kind="About" ToolTip="关于"></materialDesign:PackIcon>
+                <Image Source="pack://application:,,,/DuSwToglTF;component/Resources/About.png" Width="16" Height="16"></Image>
             </TabItem.Header>
             <StackPanel>
-                <materialDesign:Card Margin="5">
+                <Grid Margin="5">
                     <GroupBox >
                         <GroupBox.Header>
-                            <materialDesign:PackIcon Kind="Message" ToolTip="发布信息"/>
+                            <Label ToolTip="Info">信息</Label>
                         </GroupBox.Header>
                         <StackPanel>
                             <TextBlock HorizontalAlignment="Center" FontSize="15" Margin="5">
@@ -142,23 +124,23 @@
                             <TextBlock Margin="4">3.暂未支持光照度,场景，动画等功能</TextBlock>
                         </StackPanel>
                     </GroupBox>
-                </materialDesign:Card>
+                </Grid>
 
 
-                <materialDesign:Card Margin="5">
-                    <Expander >
-                        <Expander.Header >
-                            <materialDesign:PackIcon Kind="CodeBraces" ToolTip="使用的库或框架">
-                            </materialDesign:PackIcon>
-                        </Expander.Header>
+                <Grid Margin="5" >
+                    <Expander Header="NuGet">
+                        <!--<Expander.Header >
+                            <Label  ToolTip="使用的库或框架">使用的库或框架
+                            </Label>
+                        </Expander.Header>-->
                         <StackPanel>
-                            <Label>1.UI-MaterialDesign</Label>
+                            <Label>1.HandyControl</Label>
                             <Label>2.MVVM-MVVMLight</Label>
                             <Label>2.glTF-sharpglTF</Label>
                         </StackPanel>
                     </Expander>
-                </materialDesign:Card>
-                <materialDesign:Card Margin="5" UniformCornerRadius="5">
+                </Grid>
+                <Grid Margin="5" >
                     <GroupBox Header="项目信息">
                         <StackPanel>
                             <TextBlock>
@@ -174,7 +156,7 @@
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
-                </materialDesign:Card>
+                </Grid>
             </StackPanel>
         </TabItem>
     </TabControl>

@@ -197,10 +197,9 @@ namespace DuSwToglTF
         {
             try
             {
-                DuSwToglTF.ConvertPanel.PreloadDlls();
-
+                //DuSwToglTF.ConvertPanel.PreloadDlls();
                 ITaskpaneView pTaskPanView;
-                pTaskPanView = iSwApp.CreateTaskpaneView2("gltf.bmp", "将Solidworks文件转换为glTF");
+                pTaskPanView = iSwApp.CreateTaskpaneView2((ConvertPanel.RootPath+"\\"+ "gltf.bmp"), "将Solidworks文件转换为glTF");
                 if (TaskPanelControl == null)
                 {
                     SwAddin.TaskPanelControl = new ConvertPanel(SwApp);

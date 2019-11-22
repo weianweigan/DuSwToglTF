@@ -11,8 +11,6 @@ using System;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
-using MaterialDesignColors;
-using MaterialDesignThemes;
 
 namespace DuSwToglTF
 {
@@ -25,8 +23,7 @@ namespace DuSwToglTF
         public ConvertPanelViewModel viewmodel;
         public ConvertPanel(SolidWorks.Interop.sldworks.ISldWorks App)
         {
-            //加载MaterialDesign 程序集
-            MaterialDesignColors.SwatchesProvider SP = new SwatchesProvider();
+            HandyControl.Controls.Card card= new HandyControl.Controls.Card();
 
             InitializeComponent();
            

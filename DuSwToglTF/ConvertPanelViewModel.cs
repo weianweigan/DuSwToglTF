@@ -107,7 +107,7 @@ namespace DuSwToglTF
         /// <summary>
         /// 保存按钮执行的动作
         /// </summary>
-        private void SaveClick()
+        private  void  SaveClick()
         {
             List<string> files = null;
             Controller.Convertor.ErrorType errors = Controller.Convertor.ErrorType.NoErros;
@@ -126,10 +126,10 @@ namespace DuSwToglTF
             try
             {
                 //会堵塞UI；TODO:异步方式实现转换
-                var model = Controller.Convertor.DuConvertor.ConvertToglTFModel(swModel, out errors);
+                var model =  Controller.Convertor.DuConvertor.ConvertToglTFModel(swModel, out errors);
                 if (model != null)
                 {
-                    files = Controller.Convertor.DuConvertor.SaveAs(model, FilePath, FileName);
+                    files =  Controller.Convertor.DuConvertor.SaveAs(model, FilePath, FileName);
                 }
                 swApp.SendMsgToUser("保存完成");
                 if (files != null && IsOpenFile && files.Count >= 3)
