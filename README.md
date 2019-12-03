@@ -13,7 +13,7 @@ A SolidWorks Addin to save as glTF --Solidworks插件用来将SoldiWorks文件�
 
 Release:  <https://github.com/weianweigan/DuSwToglTF/releases>
 
-[下载(DownLoad)](https://github.com/weianweigan/DuSwToglTF/releases/download/1.0.2/SwToglTF.Installer.1.0.2.PreView.exe)
+[下载(DownLoad)](https://github.com/weianweigan/DuSwToglTF/releases/tag/1.0.4)
 
 ##### NuGet Package
  1.UI-MaterialDesign.wpf
