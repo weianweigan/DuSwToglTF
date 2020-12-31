@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="16.6" version="16.6" Modules="professional" RootPath="D:\weigan\repos\SolidWorksLookup\Installer" Language="zh" Id="{D407FFAE-6D50-4BD6-B90E-57CFC6759FAE}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiJavaComponent;MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent;FixupComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="选择 [|ProductName] 安装包" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
+    <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.0" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.0.1" ValueLocId="-"/>
+    <ROW Property="AI_RUN_AS_ADMIN" Value="0"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="此安装数据库包含了安装 [|ProductName] 所需的逻辑和数据." ValueLocId="*"/>
+    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://github.com/weianweigan/DuSwToglTF"/>
+    <ROW Property="Manufacturer" Value="DuSWToglTF"/>
+    <ROW Property="ProductCode" Value="1033:{5C98979D-5904-4AAF-9ED7-411145AF4A8E} 2052:{5C98979D-5904-4AAF-9ED7-411145AF4A8E} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="2052"/>
+    <ROW Property="ProductName" Value="DuSWToglTF"/>
+    <ROW Property="ProductVersion" Value="1.1.0.0" Type="32" TargetFile="DuSwToglTF.dll"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{C83AC162-3385-4635-8758-BE133FF149C7}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNTDisplay" MultiBuildValue="DefaultBuild:32-bit Windows versions" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_ExePath" ComponentId="{5D28AE5F-AFD2-4C2C-8B1D-AC95163504E2}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{D7ADCEB5-DB5F-42BA-9D57-DAD14E1043E9}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="CommonServiceLocator.dll" ComponentId="{3938AB87-05A3-44C2-A4AB-C61118BBE7E1}" Directory_="APPDIR" Attributes="0" KeyPath="CommonServiceLocator.dll"/>
+    <ROW Component="DuSwToglTF.dll" ComponentId="{57DC3AC9-396B-40C8-9F0C-FC0898895EF9}" Directory_="APPDIR" Attributes="256" KeyPath="DuSwToglTF.dll"/>
+    <ROW Component="DuSwToglTFTests.dll" ComponentId="{AB157AC0-C82D-4F7B-B957-263DB3244F77}" Directory_="APPDIR" Attributes="256" KeyPath="DuSwToglTFTests.dll"/>
+    <ROW Component="GalaSoft.MvvmLight.Extras.dll" ComponentId="{1493B814-FD49-4477-BB90-FE3EE3C366D4}" Directory_="APPDIR" Attributes="0" KeyPath="GalaSoft.MvvmLight.Extras.dll"/>
+    <ROW Component="GalaSoft.MvvmLight.Platform.dll" ComponentId="{9D954DF5-D66F-4D85-A81F-EE88C4ACB4E4}" Directory_="APPDIR" Attributes="0" KeyPath="GalaSoft.MvvmLight.Platform.dll"/>
+    <ROW Component="GalaSoft.MvvmLight.dll" ComponentId="{9DFE871F-8CA6-4847-A050-FE7903CBD7DC}" Directory_="APPDIR" Attributes="0" KeyPath="GalaSoft.MvvmLight.dll"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll" ComponentId="{96A16F57-9F06-487A-8614-446AA0545DA4}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Component="NUnit3.TestAdapter.dll" ComponentId="{DF5AE121-1551-4BCB-9F5B-F20C8C6CD1B0}" Directory_="APPDIR" Attributes="0" KeyPath="NUnit3.TestAdapter.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{5BF539EA-0A68-476C-895C-5AA826606CCB}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{4B021D75-CA89-4AED-ABA1-D49D3093920C}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
+    <ROW Component="RegAsm.exe" ComponentId="{235DF0D6-3A22-4223-A032-7F3B4F9C9D86}" Directory_="APPDIR" Attributes="256" KeyPath="RegAsm.exe"/>
+    <ROW Component="SharpGLTF.Core.dll" ComponentId="{1CAE318E-AD5A-4233-BABB-84929E874FEA}" Directory_="APPDIR" Attributes="256" KeyPath="SharpGLTF.Core.dll"/>
+    <ROW Component="SharpGLTF.Toolkit.dll" ComponentId="{EC93D5B6-664F-4ED7-B4AF-58C114096E6D}" Directory_="APPDIR" Attributes="256" KeyPath="SharpGLTF.Toolkit.dll"/>
+    <ROW Component="SolidWorks.Interop.sldworks.dll" ComponentId="{A6DF7F29-CC73-47F5-A36F-147424CECD4A}" Directory_="APPDIR" Attributes="0" KeyPath="SolidWorks.Interop.sldworks.dll"/>
+    <ROW Component="SolidWorks.Interop.swconst.dll" ComponentId="{677936F6-D103-41AE-BDE1-65B4E267EBFB}" Directory_="APPDIR" Attributes="0" KeyPath="SolidWorks.Interop.swconst.dll"/>
+    <ROW Component="SolidWorks.Interop.swpublished.dll" ComponentId="{337ADC9E-D447-47E1-B243-39CAA5F9FE00}" Directory_="APPDIR" Attributes="0" KeyPath="SolidWorks.Interop.swpublished.dll"/>
+    <ROW Component="System.Buffers.dll" ComponentId="{25E6E406-D69A-4C1B-A06F-F62BBF923E89}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
+    <ROW Component="System.Memory.dll" ComponentId="{D3A0E75D-25C7-4923-B790-20D0EEE0F045}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll" ComponentId="{14C58B6F-A036-4C8E-99B1-F52C74850B70}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{D34EB584-45F5-4206-91F2-0F5F276A217E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="System.Text.Encodings.Web.dll" ComponentId="{1AD80493-DAC0-45D7-A3AF-06B90912D8EA}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Encodings.Web.dll"/>
+    <ROW Component="System.Text.Json.dll" ComponentId="{A29684DF-2007-4798-BF39-6C690B113B5D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Json.dll"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll" ComponentId="{24827DDB-085E-4F5E-99F6-EE46F9459914}" Directory_="APPDIR" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="System.ValueTuple.dll" ComponentId="{D703AC71-18A0-49D2-8B5C-3F3DC540A549}" Directory_="APPDIR" Attributes="0" KeyPath="System.ValueTuple.dll"/>
+    <ROW Component="System.Windows.Interactivity.dll" ComponentId="{5404F125-4869-4E78-BA7A-F66F8EA3DCFC}" Directory_="APPDIR" Attributes="0" KeyPath="System.Windows.Interactivity.dll"/>
+    <ROW Component="Xarial.XCad.SolidWorks.dll" ComponentId="{023A419B-99A3-4AC9-8DE1-6AF1B365E8D8}" Directory_="APPDIR" Attributes="0" KeyPath="Xarial.XCad.SolidWorks.dll"/>
+    <ROW Component="Xarial.XCad.Toolkit.dll" ComponentId="{4BAEFC0A-8F48-42DB-9D76-CF490D6F8AB4}" Directory_="APPDIR" Attributes="0" KeyPath="Xarial.XCad.Toolkit.dll"/>
+    <ROW Component="Xarial.XCad.dll" ComponentId="{36F718CA-2BEC-411A-973A-4FCFF093748A}" Directory_="APPDIR" Attributes="0" KeyPath="Xarial.XCad.dll"/>
+    <ROW Component="nunit.engine.api.dll" ComponentId="{556B2910-2FBB-4B24-AD80-49F7E89FDF4C}" Directory_="APPDIR" Attributes="0" KeyPath="nunit.engine.api.dll"/>
+    <ROW Component="nunit.engine.dll" ComponentId="{67A1DA32-9043-4CA0-9C49-50B3FD563185}" Directory_="APPDIR" Attributes="0" KeyPath="nunit.engine.dll"/>
+    <ROW Component="nunit.framework.dll" ComponentId="{132007DB-60CE-47B6-B188-751CC8CDA51F}" Directory_="APPDIR" Attributes="0" KeyPath="nunit.framework.dll"/>
+    <ROW Component="txt" ComponentId="{C72AEBEF-7CEF-4382-8B5F-292DBE69F413}" Directory_="APPDIR" Attributes="0" KeyPath="GalaSoft.MvvmLight.Extras.xml" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="CommonServiceLocator.dll" Component_="CommonServiceLocator.dll" FileName="COMMON~1.DLL|CommonServiceLocator.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\CommonServiceLocator.dll" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.dll" Component_="GalaSoft.MvvmLight.dll" FileName="GALASO~1.DLL|GalaSoft.MvvmLight.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.dll" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Extras.dll" Component_="GalaSoft.MvvmLight.Extras.dll" FileName="GALASO~2.DLL|GalaSoft.MvvmLight.Extras.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Extras.dll" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Extras.pdb" Component_="GalaSoft.MvvmLight.Extras.dll" FileName="GALASO~1.PDB|GalaSoft.MvvmLight.Extras.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Extras.pdb" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Extras.xml" Component_="txt" FileName="GALASO~1.XML|GalaSoft.MvvmLight.Extras.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Extras.xml" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.pdb" Component_="GalaSoft.MvvmLight.dll" FileName="GALASO~2.PDB|GalaSoft.MvvmLight.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.pdb" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Platform.dll" Component_="GalaSoft.MvvmLight.Platform.dll" FileName="GALASO~3.DLL|GalaSoft.MvvmLight.Platform.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Platform.dll" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Platform.pdb" Component_="GalaSoft.MvvmLight.Platform.dll" FileName="GALASO~3.PDB|GalaSoft.MvvmLight.Platform.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Platform.pdb" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Platform.xml" Component_="txt" FileName="GALASO~2.XML|GalaSoft.MvvmLight.Platform.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Platform.xml" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.xml" Component_="txt" FileName="GALASO~3.XML|GalaSoft.MvvmLight.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.xml" SelfReg="false"/>
+    <ROW File="SolidWorks.Interop.sldworks.dll" Component_="SolidWorks.Interop.sldworks.dll" FileName="SOLIDW~1.DLL|SolidWorks.Interop.sldworks.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SolidWorks.Interop.sldworks.dll" SelfReg="false"/>
+    <ROW File="SolidWorks.Interop.swconst.dll" Component_="SolidWorks.Interop.swconst.dll" FileName="SOLIDW~2.DLL|SolidWorks.Interop.swconst.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SolidWorks.Interop.swconst.dll" SelfReg="false"/>
+    <ROW File="SolidWorks.Interop.swpublished.dll" Component_="SolidWorks.Interop.swpublished.dll" FileName="SOLIDW~3.DLL|SolidWorks.Interop.swpublished.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SolidWorks.Interop.swpublished.dll" SelfReg="false"/>
+    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Windows.Interactivity.dll" SelfReg="false"/>
+    <ROW File="Xarial.XCad.dll" Component_="Xarial.XCad.dll" FileName="XARIAL~1.DLL|Xarial.XCad.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.dll" SelfReg="false"/>
+    <ROW File="Xarial.XCad.SolidWorks.dll" Component_="Xarial.XCad.SolidWorks.dll" FileName="XARIAL~2.DLL|Xarial.XCad.SolidWorks.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.SolidWorks.dll" SelfReg="false"/>
+    <ROW File="Xarial.XCad.SolidWorks.xml" Component_="txt" FileName="XARIAL~1.XML|Xarial.XCad.SolidWorks.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.SolidWorks.xml" SelfReg="false"/>
+    <ROW File="Xarial.XCad.Toolkit.dll" Component_="Xarial.XCad.Toolkit.dll" FileName="XARIAL~3.DLL|Xarial.XCad.Toolkit.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.Toolkit.dll" SelfReg="false"/>
+    <ROW File="Xarial.XCad.Toolkit.xml" Component_="txt" FileName="XARIAL~2.XML|Xarial.XCad.Toolkit.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.Toolkit.xml" SelfReg="false"/>
+    <ROW File="Xarial.XCad.xml" Component_="txt" FileName="XARIAL~3.XML|Xarial.XCad.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.xml" SelfReg="false"/>
+    <ROW File="DuSwToglTF.dll" Component_="DuSwToglTF.dll" FileName="DUSWTO~1.DLL|DuSwToglTF.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTF.dll" SelfReg="false"/>
+    <ROW File="DuSwToglTF.dll.config" Component_="txt" FileName="DUSWTO~1.CON|DuSwToglTF.dll.config" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTF.dll.config" SelfReg="false"/>
+    <ROW File="DuSwToglTFTests.dll" Component_="DuSwToglTFTests.dll" FileName="DUSWTO~2.DLL|DuSwToglTFTests.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTFTests.dll" SelfReg="false"/>
+    <ROW File="DuSwToglTFTests.dll.config" Component_="txt" FileName="DUSWTO~2.CON|DuSwToglTFTests.dll.config" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTFTests.dll.config" SelfReg="false"/>
+    <ROW File="DuSwToglTFTests.pdb" Component_="DuSwToglTFTests.dll" FileName="DUSWTO~1.PDB|DuSwToglTFTests.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTFTests.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="txt" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="txt" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="nunit.engine.api.dll" Component_="nunit.engine.api.dll" FileName="NUNITE~1.DLL|nunit.engine.api.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.engine.api.dll" SelfReg="false"/>
+    <ROW File="nunit.engine.dll" Component_="nunit.engine.dll" FileName="NUNITE~2.DLL|nunit.engine.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.engine.dll" SelfReg="false"/>
+    <ROW File="nunit.framework.dll" Component_="nunit.framework.dll" FileName="NUNITF~1.DLL|nunit.framework.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.framework.dll" SelfReg="false"/>
+    <ROW File="nunit.framework.pdb" Component_="nunit.framework.dll" FileName="NUNITF~1.PDB|nunit.framework.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.framework.pdb" SelfReg="false"/>
+    <ROW File="nunit.framework.xml" Component_="txt" FileName="NUNITF~1.XML|nunit.framework.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.framework.xml" SelfReg="false"/>
+    <ROW File="NUnit3.TestAdapter.dll" Component_="NUnit3.TestAdapter.dll" FileName="NUNIT3~1.DLL|NUnit3.TestAdapter.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\NUnit3.TestAdapter.dll" SelfReg="false"/>
+    <ROW File="NUnit3.TestAdapter.pdb" Component_="NUnit3.TestAdapter.dll" FileName="NUNIT3~1.PDB|NUnit3.TestAdapter.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\NUnit3.TestAdapter.pdb" SelfReg="false"/>
+    <ROW File="nunit_random_seed.tmp" Component_="txt" FileName="NUNIT_~1.TMP|nunit_random_seed.tmp" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit_random_seed.tmp" SelfReg="false"/>
+    <ROW File="SharpGLTF.Core.dll" Component_="SharpGLTF.Core.dll" FileName="SHARPG~1.DLL|SharpGLTF.Core.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SharpGLTF.Core.dll" SelfReg="false"/>
+    <ROW File="SharpGLTF.Core.pdb" Component_="SharpGLTF.Core.dll" FileName="SHARPG~1.PDB|SharpGLTF.Core.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SharpGLTF.Core.pdb" SelfReg="false"/>
+    <ROW File="SharpGLTF.Toolkit.dll" Component_="SharpGLTF.Toolkit.dll" FileName="SHARPG~2.DLL|SharpGLTF.Toolkit.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SharpGLTF.Toolkit.dll" SelfReg="false"/>
+    <ROW File="SharpGLTF.Toolkit.pdb" Component_="SharpGLTF.Toolkit.dll" FileName="SHARPG~2.PDB|SharpGLTF.Toolkit.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SharpGLTF.Toolkit.pdb" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~2.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.xml" Component_="txt" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Buffers.xml" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Memory.xml" Component_="txt" FileName="SYSTEM~2.XML|System.Memory.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Memory.xml" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.xml" Component_="txt" FileName="SYSTEM~3.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Numerics.Vectors.xml" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="txt" FileName="SYSTEM~4.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Text.Encodings.Web.dll" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.xml" Component_="txt" FileName="SYSTEM~5.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Text.Encodings.Web.xml" SelfReg="false"/>
+    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~7.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Text.Json.dll" SelfReg="false"/>
+    <ROW File="System.Text.Json.xml" Component_="txt" FileName="SYSTEM~6.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Text.Json.xml" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="txt" FileName="SYSTEM~7.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~9.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.ValueTuple.dll" SelfReg="false"/>
+    <ROW File="System.ValueTuple.xml" Component_="txt" FileName="SYSTEM~8.XML|System.ValueTuple.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.ValueTuple.xml" SelfReg="false"/>
+    <ROW File="RegAsm.exe" Component_="RegAsm.exe" FileName="RegAsm.exe" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\RegAsm.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="Install.bat" Component_="txt" FileName="Install.bat" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Install.bat" SelfReg="false"/>
+    <ROW File="UnInstall.bat" Component_="txt" FileName="UNINST~1.BAT|UnInstall.bat" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\UnInstall.bat" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="zh;en" LangOpt="1" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64" UACExecutionLevel="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_zh.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\FolderDlg.aip"/>
+    <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\LicenseAgreementDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;azure\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;azure\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\WelcomeDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;azure\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="正在删除从档案中提取的文件" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="正在删除从档案中提取的文件" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="从存档中提取文件" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="从存档中提取文件" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="55" Y="110" Width="372" Height="180" Attributes="3" Property="EulaRead" Text="..\..\DuSwToglTF\Installer\License.rtf" Order="800" MsiKey="LicenseAgreementDlg#AgreementText"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_RunFinishActions" Type="1" Source="aicustact.dll" Target="RunFinishActions" WithoutSeq="true"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="Install.bat" Type="1042" Source="Install.bat"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder][ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+    <ROW Action="UnInstall.bat" Type="1042" Source="UnInstall.bat"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="txt"/>
+    <ROW Feature_="MainFeature" Component_="CommonServiceLocator.dll"/>
+    <ROW Feature_="MainFeature" Component_="GalaSoft.MvvmLight.dll"/>
+    <ROW Feature_="MainFeature" Component_="GalaSoft.MvvmLight.Extras.dll"/>
+    <ROW Feature_="MainFeature" Component_="GalaSoft.MvvmLight.Platform.dll"/>
+    <ROW Feature_="MainFeature" Component_="SolidWorks.Interop.sldworks.dll"/>
+    <ROW Feature_="MainFeature" Component_="SolidWorks.Interop.swconst.dll"/>
+    <ROW Feature_="MainFeature" Component_="SolidWorks.Interop.swpublished.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Windows.Interactivity.dll"/>
+    <ROW Feature_="MainFeature" Component_="Xarial.XCad.dll"/>
+    <ROW Feature_="MainFeature" Component_="Xarial.XCad.SolidWorks.dll"/>
+    <ROW Feature_="MainFeature" Component_="Xarial.XCad.Toolkit.dll"/>
+    <ROW Feature_="MainFeature" Component_="DuSwToglTF.dll"/>
+    <ROW Feature_="MainFeature" Component_="DuSwToglTFTests.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="nunit.engine.api.dll"/>
+    <ROW Feature_="MainFeature" Component_="nunit.engine.dll"/>
+    <ROW Feature_="MainFeature" Component_="nunit.framework.dll"/>
+    <ROW Feature_="MainFeature" Component_="NUnit3.TestAdapter.dll"/>
+    <ROW Feature_="MainFeature" Component_="SharpGLTF.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="SharpGLTF.Toolkit.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Encodings.Web.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ValueTuple.dll"/>
+    <ROW Feature_="MainFeature" Component_="RegAsm.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_DetectSoftware" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="UnInstall.bat" Condition="( Installed AND ( REMOVE = &quot;ALL&quot; OR AI_INSTALL_MODE = &quot;Remove&quot; ) )" Sequence="1601"/>
+    <ROW Action="Install.bat" Condition="( NOT Installed )" Sequence="6401"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103"/>
+    <ROW Action="AI_DetectSoftware" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="( Version9X OR VersionNT64 )" Description="[ProductName] 无法安装在 [WindowsTypeNTDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] 无法安装在 [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] 无法安装在 [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] 无法安装在 [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] 无法安装在 .NE[ProductName] Framework 版本低于 [AI_REQUIRED_DOTNET_DISPLAY] 的系统上." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="此包只能从引导程序运行." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] 无法安装在 [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="azure"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="A6D7F21EAEB4C4A901F0979CF110936" DisplayName=".NET Framework 4.7.2" SetupFileUrl="https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe" Location="1" ExactSize="83943272" WinNTVersions="Windows XP SP3 x86, Windows Server 2003 SP2 x86, Windows Vista x86, Windows Server 2008 x86, Windows 7 RTM x86, Windows 10 version 1507 x86, Windows 10 version 1511 x86, Windows 10 version 1803 x86, Windows 10 version 1809 x86, Windows 10 version 1903 x86, Windows 10 version 1909 x86" WinNT64Versions="Windows XP SP2 x64, Windows Server 2003 SP2 x64, Windows Vista x64, Windows Server 2008 x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64, Windows 10 version 1803 x64, Windows 10 version 1809 x64, Windows 10 version 1903 x64, Windows 10 version 1909 x64, Windows Server 2019 x64" Operator="1" NoUiComLine="/q /norestart" Options="xy" MD5="87450cfa175585b23a76bbd7052ee66b" TargetName=".NET Framework 4.7.2"/>
+    <ATTRIBUTE name="PrereqsOrder" value="A6D7F21EAEB4C4A901F0979CF110936"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="A6D7F21EAEB4C4A901F0979CF110936Release" Prereq="A6D7F21EAEB4C4A901F0979CF110936" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G461813" Order="1" Property="PreReqSearch_A6D7F21EAEB4C4A901F097"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="APPDIR" SourcePath="..\..\DuSwToglTF\bin" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6"/>
+  </COMPONENT>
+</DOCUMENT>

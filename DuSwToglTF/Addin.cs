@@ -78,6 +78,7 @@ namespace DuSwToglTF
     {
         [CommandItemInfo(true,true,WorkspaceTypes_e.Part | WorkspaceTypes_e.Assembly,true)]
         [Title("glTFExporter")]
+        [Icon(typeof(Properties.Resource),nameof(Properties.Resource.gltf))]
         SaveAsglTF
     }
 }
