@@ -29,8 +29,3 @@ email: <1831197727@qq.com>
 ![UI](resource/part.png)
 
 ![Result](resource/assembly.png)
-
-
-
-
-
