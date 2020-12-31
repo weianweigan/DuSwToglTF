@@ -114,14 +114,14 @@
                         <GroupBox.Header>
                             <Label ToolTip="Info">信息</Label>
                         </GroupBox.Header>
-                        <StackPanel>
-                            <TextBlock HorizontalAlignment="Center" FontSize="15" Margin="5">
+                        <StackPanel >
+                            <TextBlock Foreground="Black" HorizontalAlignment="Center" FontSize="15" Margin="5">
                     DuSwToglTF V0.0.1 Preview
                             </TextBlock>
-                            <TextBlock Margin="4">1.支持格式:sldprt,sldasm转换为glTF文件</TextBlock>
-                            <TextBlock Margin="4" TextWrapping="Wrap">2.对多实体零件或者装配体的输出未进行测试,可能产生错误</TextBlock>
-                            <TextBlock Margin="4">2.包含几何信息和颜色信息,单一面的颜色信息暂未考虑</TextBlock>
-                            <TextBlock Margin="4">3.暂未支持光照度,场景，动画等功能</TextBlock>
+                            <TextBlock Foreground="Black" Margin="4">1.支持格式:sldprt,sldasm转换为glTF文件</TextBlock>
+                            <TextBlock Foreground="Black" Margin="4" TextWrapping="Wrap">2.对多实体零件或者装配体的输出未进行测试,可能产生错误</TextBlock>
+                            <TextBlock Foreground="Black" Margin="4">2.包含几何信息和颜色信息,单一面的颜色信息暂未考虑</TextBlock>
+                            <TextBlock Foreground="Black" Margin="4">3.暂未支持光照度,场景，动画等功能</TextBlock>
                         </StackPanel>
                     </GroupBox>
                 </Grid>
@@ -146,12 +146,12 @@
                             <TextBlock>
                                 <Hyperlink></Hyperlink>
                             </TextBlock>
-                            <TextBlock Margin="5">Code by DuDuDu</TextBlock>
-                            <TextBlock Margin="5">Contact me:1831197727@qq.com</TextBlock>
-                            <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="Black" Margin="5">Code by DuDuDu</TextBlock>
+                            <TextBlock Foreground="Black" Margin="5">Contact me:1831197727@qq.com</TextBlock>
+                            <StackPanel  Orientation="Horizontal">
                                 <Label>Project:</Label>
                                 <TextBlock VerticalAlignment="Center">
-                                <Hyperlink>https://github.com/weianweigan/DuSwToglTF</Hyperlink>
+                                <Hyperlink Foreground="Black">https://github.com/weianweigan/DuSwToglTF</Hyperlink>
                                 </TextBlock>
                             </StackPanel>
                         </StackPanel>

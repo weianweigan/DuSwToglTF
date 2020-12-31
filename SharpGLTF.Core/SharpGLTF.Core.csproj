@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>    
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
+    <AssemblyName>SharpGLTF.Core</AssemblyName>
+    <RootNamespace>SharpGLTF</RootNamespace>
+    <LangVersion>7.3</LangVersion>
+    <Platforms>AnyCPU;x64</Platforms>    
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--
+    <DefineConstants>TRACE;SUPRESSTRYCATCH</DefineConstants>
+    -->
+  </PropertyGroup>
+
+  <!--<Import Project="..\PackageInfo.props" />
+  <Import Project="..\Version.props" />
+  <Import Project="..\Analyzers.props" />
+  <Import Project="..\Testing.props" />-->
+  
+  <ItemGroup>
+    <Compile Include="..\Shared\Guard.cs" Link="Debug\Guard.cs" />
+    <Compile Include="..\Shared\_Extensions.cs" Link="_Extensions.cs" />
+  </ItemGroup>  
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <!-- TODO: Only target 5.0.0 when we add Net5 -->
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Schema2\Generated\*.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>  
+
+</Project>
