@@ -8,7 +8,6 @@ using System.IO;
 using System;
 using System.Windows;
 using DuSwToglTF.SwExtension;
-using SharpGLTF.IO;
 
 namespace DuSwToglTF.ExportContext
 {
@@ -23,6 +22,7 @@ namespace DuSwToglTF.ExportContext
         protected ModelRoot _model;
         protected SceneBuilder _sceneBuilder;
         protected ExportOptions _options;
+        private CustomPropertyGroup _customPropertyGroup;
 
         public glTFExportContext(string savePathName,ExportOptions options = null)
         {
@@ -35,15 +35,17 @@ namespace DuSwToglTF.ExportContext
 
         public string SavePathName => _savePathName;
 
-        public CustomPropertiesExtension CustomProperties { get; } = new CustomPropertiesExtension();
-
         public void Finish(bool obj,bool gltf,bool glb)
         {
-           
-            //_sceneBuilder.Extras = JsonContent.CreateFrom(CustomProperties.CustomProperties);
             _model = _sceneBuilder.ToGltf2();
 
-            //_model.SetExtension<CustomPropertiesExtension>(CustomProperties);
+            if (_customPropertyGroup != null)
+            {
+                _model.WithSwCustomProperty(new SharpGLTF.Sw.SolidWorks()
+                {
+                    SwCustomProperty = _customPropertyGroup.CopyChecked()
+                });
+            }
 
             if(obj)
                 Save(".obj",(filePathName) => _model.SaveAsWavefront(filePathName));            
@@ -55,7 +57,6 @@ namespace DuSwToglTF.ExportContext
 
         private void SaveglTF(string filePathName)
         {
-
             _model.SaveGLTF(filePathName, new WriteSettings()
             {
                 JsonIndented = true,
@@ -82,9 +83,9 @@ namespace DuSwToglTF.ExportContext
             _sceneBuilder.AddRigidMesh(body.GetBodyMeshBuilder(docMatBuilder),postion);
         }
 
-        public void OnCustomPropertyBegin(CustomPropertiesExtension.CustomProperty prop)
+        public void WithDocCustomProperties(CustomPropertyGroup customPropertyGroup)
         {
-            CustomProperties.CustomProperties.Add(prop);   
+            _customPropertyGroup = customPropertyGroup;
         }
 
         public bool Start()
@@ -99,6 +100,8 @@ namespace DuSwToglTF.ExportContext
         bool Start();
 
         void OnBodyBegin(IBody2 body, MaterialBuilder docMatBuilder, Matrix4x4 postion);
+
+        void WithDocCustomProperties(CustomPropertyGroup group);
 
         void Finish(bool obj, bool gltf, bool glb);
     }

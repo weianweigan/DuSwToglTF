@@ -26,11 +26,12 @@ using System.Text.Json;
 namespace SharpGLTF.Schema2
 {
 	using Collections;
+    using SharpGLTF.Sw;
 
-	/// <summary>
-	/// The indices data type.
-	/// </summary>
-	public enum IndexEncodingType
+    /// <summary>
+    /// The indices data type.
+    /// </summary>
+    public enum IndexEncodingType
 	{
 		UNSIGNED_BYTE = 5121,
 		UNSIGNED_SHORT = 5123,
@@ -1265,6 +1266,7 @@ namespace SharpGLTF.Schema2
 			SerializeProperty(writer, "scenes", _scenes, _scenesMinItems);
 			SerializeProperty(writer, "skins", _skins, _skinsMinItems);
 			SerializeProperty(writer, "textures", _textures, _texturesMinItems);
+            SerializePropertyObject(writer, "solidworks", SolidWorks);
 		}
 	
 		protected override void DeserializeProperty(string jsonPropertyName, ref Utf8JsonReader reader)
@@ -1288,6 +1290,7 @@ namespace SharpGLTF.Schema2
 				case "scenes": DeserializePropertyList<Scene>(ref reader, _scenes); break;
 				case "skins": DeserializePropertyList<Skin>(ref reader, _skins); break;
 				case "textures": DeserializePropertyList<Texture>(ref reader, _textures); break;
+				case "solidworks": SolidWorks = DeserializePropertyValue<SolidWorks>(ref reader); break;
 				default: base.DeserializeProperty(jsonPropertyName,ref reader); break;
 			}
 		}

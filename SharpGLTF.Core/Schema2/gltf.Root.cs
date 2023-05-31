@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using SharpGLTF.Collections;
+using SharpGLTF.Sw;
 
 namespace SharpGLTF.Schema2
 {

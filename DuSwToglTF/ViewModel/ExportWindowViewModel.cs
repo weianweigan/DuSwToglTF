@@ -1,5 +1,6 @@
 ﻿using DuSwToglTF.ExportContext;
 using DuSwToglTF.Extension;
+using DuSwToglTF.SwExtension;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Microsoft.Win32;
@@ -8,6 +9,7 @@ using SolidWorks.Interop.swconst;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DuSwToglTF.ViewModel
@@ -50,6 +52,7 @@ namespace DuSwToglTF.ViewModel
             }
 
             Nodes = new ObservableCollection<SwNode>() { SwNode.Create(doc) };
+            CustomPropertyGroup = new[] { doc.GetCustomProperties() };
 
             //worker
             _worker.DoWork += _worker_DoWork;
@@ -65,6 +68,8 @@ namespace DuSwToglTF.ViewModel
                 SaveCommand.RaiseCanExecuteChanged();
             }
         }
+
+        public CustomPropertyGroup[] CustomPropertyGroup { get; set; }
 
         public string FileName { get => _fileName; set => Set(ref _fileName, value); }
 
@@ -155,7 +160,7 @@ namespace DuSwToglTF.ViewModel
                 _worker.ReportProgress(5, "Begin Convert AssemblyDoc...");
             }
 
-            ExporterUtility.ExportData(argu.Doc, context, (progress, msg) => _worker.ReportProgress(progress, msg), HasObj, HasglTF, Hasglb);
+            ExporterUtility.ExportData(argu.Doc, context,CustomPropertyGroup?.FirstOrDefault() ,(progress, msg) => _worker.ReportProgress(progress, msg), HasObj, HasglTF, Hasglb);
         }
 
         private void BrowserClick()

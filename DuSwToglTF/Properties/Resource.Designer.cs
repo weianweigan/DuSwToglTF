@@ -19,10 +19,10 @@ namespace DuSwToglTF.Properties {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource {
+    public class Resource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace DuSwToglTF.Properties {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DuSwToglTF.Properties.Resource", typeof(Resource).Assembly);
@@ -51,7 +51,7 @@ namespace DuSwToglTF.Properties {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,12 +61,84 @@ namespace DuSwToglTF.Properties {
         }
         
         /// <summary>
+        ///   查找类似 CustomProperties 的本地化字符串。
+        /// </summary>
+        public static string CustomProperties {
+            get {
+                return ResourceManager.GetString("CustomProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 File name 的本地化字符串。
+        /// </summary>
+        public static string FileName {
+            get {
+                return ResourceManager.GetString("FileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Formats 的本地化字符串。
+        /// </summary>
+        public static string Foramts {
+            get {
+                return ResourceManager.GetString("Foramts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap gltf {
+        public static System.Drawing.Bitmap gltf {
             get {
                 object obj = ResourceManager.GetObject("gltf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ImporveQuanlity 的本地化字符串。
+        /// </summary>
+        public static string ImporveQuanlity {
+            get {
+                return ResourceManager.GetString("ImporveQuanlity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Mesh 的本地化字符串。
+        /// </summary>
+        public static string Mesh {
+            get {
+                return ResourceManager.GetString("Mesh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Options 的本地化字符串。
+        /// </summary>
+        public static string Options {
+            get {
+                return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Save 的本地化字符串。
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Save location 的本地化字符串。
+        /// </summary>
+        public static string SaveLocation {
+            get {
+                return ResourceManager.GetString("SaveLocation", resourceCulture);
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using DuSwToglTF.DataModel;
 using DuSwToglTF.ExportContext;
+using DuSwToglTF.SwExtension;
 using SharpGLTF.Materials;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
@@ -36,6 +37,12 @@ namespace DuSwToglTF.Extension
 
                 foreach (IComponent2 comp  in comps)
                 {
+                    var suppressionState = (swComponentSuppressionState_e)comp.GetSuppression();
+                    if (!(suppressionState == swComponentSuppressionState_e.swComponentResolved || suppressionState == swComponentSuppressionState_e.swComponentFullyResolved))
+                    {
+                        continue;
+                    }
+
                     var bodies = comp.GetBodies2((int)swBodyType_e.swSolidBody) as object[];
                     var compMaterial = comp.GetMaterialBuilder();
 
@@ -71,35 +78,74 @@ namespace DuSwToglTF.Extension
             }
         }
 
-        public static IEnumerable<CustomProperty> GetCustomProperties(this IModelDoc2 doc)
+        public static CustomPropertyGroup GetCustomProperties(this IModelDoc2 doc)
         {
             var docType = (swDocumentTypes_e)doc.GetType();
 
-            if (docType == swDocumentTypes_e.swDocPART)
+            var rootCompCusPropGroup = GetDocAllProperties(doc);
+
+            if (docType == swDocumentTypes_e.swDocASSEMBLY)
             {
-                var cusMgr = doc.Extension.CustomPropertyManager[""];
+                var assDoc = doc as IAssemblyDoc;
+                var comps = assDoc.GetComponents(false) as object[];
 
-                object names = new object();
-                object types = new object();
-                object values = new object();
-
-                cusMgr.GetAll(ref names, ref types, ref values);
-
-                if (names != null)
+                HashSet<string> docs = new HashSet<string>();
+                //遍历组件
+                foreach (IComponent2 comp in comps)
                 {
-                    var nameArray = names as object[];
-                    var valueArray = values as object[];
-                    var typeArray = types as object[];
-                    for (int i = 0; i < nameArray.Length; i++)
+                    //Skip suppressed components
+                    var suppressionState = (swComponentSuppressionState_e)comp.GetSuppression();
+                    if (!(suppressionState == swComponentSuppressionState_e.swComponentResolved || 
+                        suppressionState == swComponentSuppressionState_e.swComponentFullyResolved))
                     {
-                        yield return new CustomProperty(nameArray[i].ToString(), valueArray[i].ToString(), doc.GetTitle());
+                        continue;
                     }
+
+                    var compDoc = comp.GetModelDoc2() as IModelDoc2;
+
+                    var pathName = compDoc.GetPathName();
+                    if (!string.IsNullOrEmpty(pathName) && docs.Contains(pathName))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        docs.Add(pathName);
+                    }
+
+                    var subGroup = GetDocAllProperties(compDoc);
+
+                    rootCompCusPropGroup.Children.Add(subGroup);
                 }
             }
-            else if(docType == swDocumentTypes_e.swDocASSEMBLY)
-            {
 
+            return rootCompCusPropGroup;
+        }
+
+        private static CustomPropertyGroup GetDocAllProperties(IModelDoc2 doc)
+        {
+            var compCusPropGroup = new CustomPropertyGroup(doc.GetTitle());
+
+            var cusMgr = doc.Extension.CustomPropertyManager[""];
+
+            object names = new object();
+            object types = new object();
+            object values = new object();
+
+            cusMgr.GetAll(ref names, ref types, ref values);
+
+            if (names != null)
+            {
+                var nameArray = names as object[];
+                var valueArray = values as object[];
+                var typeArray = types as object[];
+                for (int i = 0; i < nameArray.Length; i++)
+                {
+                    compCusPropGroup.Children.Add(new CustomProperty(nameArray[i].ToString(), valueArray[i].ToString(), doc.GetTitle()));
+                }
             }
+
+            return compCusPropGroup;
         }
     }
 }

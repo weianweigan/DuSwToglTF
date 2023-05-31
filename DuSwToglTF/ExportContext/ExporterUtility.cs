@@ -1,4 +1,5 @@
 ﻿using DuSwToglTF.Extension;
+using DuSwToglTF.SwExtension;
 using SolidWorks.Interop.sldworks;
 using System;
 using System.Linq;
@@ -8,7 +9,14 @@ namespace DuSwToglTF.ExportContext
 {
     public static class ExporterUtility
     {
-        public static void ExportData(IModelDoc2 doc,glTFExportContext context,Action<int,string> progressAction = null,bool hasObj = false,bool hasglTF = true,bool hasglb = true)
+        public static void ExportData(
+            IModelDoc2 doc,
+            glTFExportContext context,
+            CustomPropertyGroup customPropertyGroup,
+            Action<int,string> progressAction = null,
+            bool hasObj = false,
+            bool hasglTF = true,bool 
+            hasglb = true)
         {
             try
             {
@@ -35,11 +43,8 @@ namespace DuSwToglTF.ExportContext
 
                 //写入自定义属性
                 //var properties = doc.GetCustomProperties();
-                //foreach (var prop in properties)
-                //{
-                //    context.OnCustomPropertyBegin(prop);
-                //}
-
+                context.WithDocCustomProperties(customPropertyGroup);
+                
                 progressAction?.Invoke(90, "Saving");
 
                 context.Finish(hasObj, hasglTF, hasglb);
