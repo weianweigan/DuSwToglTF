@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="16.6" version="16.6" Modules="professional" RootPath="D:\weigan\repos\SolidWorksLookup\Installer" Language="zh" Id="{D407FFAE-6D50-4BD6-B90E-57CFC6759FAE}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="16.6" version="16.6" Modules="professional" RootPath="Setup Files" Language="zh" Id="{D407FFAE-6D50-4BD6-B90E-57CFC6759FAE}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiJavaComponent;MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent;FixupComponent"/>
   </COMPONENT>
@@ -77,66 +77,66 @@
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="CommonServiceLocator.dll" Component_="CommonServiceLocator.dll" FileName="COMMON~1.DLL|CommonServiceLocator.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\CommonServiceLocator.dll" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.dll" Component_="GalaSoft.MvvmLight.dll" FileName="GALASO~1.DLL|GalaSoft.MvvmLight.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.dll" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.Extras.dll" Component_="GalaSoft.MvvmLight.Extras.dll" FileName="GALASO~2.DLL|GalaSoft.MvvmLight.Extras.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Extras.dll" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.Extras.pdb" Component_="GalaSoft.MvvmLight.Extras.dll" FileName="GALASO~1.PDB|GalaSoft.MvvmLight.Extras.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Extras.pdb" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.Extras.xml" Component_="txt" FileName="GALASO~1.XML|GalaSoft.MvvmLight.Extras.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Extras.xml" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.pdb" Component_="GalaSoft.MvvmLight.dll" FileName="GALASO~2.PDB|GalaSoft.MvvmLight.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.pdb" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.Platform.dll" Component_="GalaSoft.MvvmLight.Platform.dll" FileName="GALASO~3.DLL|GalaSoft.MvvmLight.Platform.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Platform.dll" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.Platform.pdb" Component_="GalaSoft.MvvmLight.Platform.dll" FileName="GALASO~3.PDB|GalaSoft.MvvmLight.Platform.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Platform.pdb" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.Platform.xml" Component_="txt" FileName="GALASO~2.XML|GalaSoft.MvvmLight.Platform.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.Platform.xml" SelfReg="false"/>
-    <ROW File="GalaSoft.MvvmLight.xml" Component_="txt" FileName="GALASO~3.XML|GalaSoft.MvvmLight.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\GalaSoft.MvvmLight.xml" SelfReg="false"/>
-    <ROW File="SolidWorks.Interop.sldworks.dll" Component_="SolidWorks.Interop.sldworks.dll" FileName="SOLIDW~1.DLL|SolidWorks.Interop.sldworks.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SolidWorks.Interop.sldworks.dll" SelfReg="false"/>
-    <ROW File="SolidWorks.Interop.swconst.dll" Component_="SolidWorks.Interop.swconst.dll" FileName="SOLIDW~2.DLL|SolidWorks.Interop.swconst.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SolidWorks.Interop.swconst.dll" SelfReg="false"/>
-    <ROW File="SolidWorks.Interop.swpublished.dll" Component_="SolidWorks.Interop.swpublished.dll" FileName="SOLIDW~3.DLL|SolidWorks.Interop.swpublished.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SolidWorks.Interop.swpublished.dll" SelfReg="false"/>
-    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Windows.Interactivity.dll" SelfReg="false"/>
-    <ROW File="Xarial.XCad.dll" Component_="Xarial.XCad.dll" FileName="XARIAL~1.DLL|Xarial.XCad.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.dll" SelfReg="false"/>
-    <ROW File="Xarial.XCad.SolidWorks.dll" Component_="Xarial.XCad.SolidWorks.dll" FileName="XARIAL~2.DLL|Xarial.XCad.SolidWorks.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.SolidWorks.dll" SelfReg="false"/>
-    <ROW File="Xarial.XCad.SolidWorks.xml" Component_="txt" FileName="XARIAL~1.XML|Xarial.XCad.SolidWorks.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.SolidWorks.xml" SelfReg="false"/>
-    <ROW File="Xarial.XCad.Toolkit.dll" Component_="Xarial.XCad.Toolkit.dll" FileName="XARIAL~3.DLL|Xarial.XCad.Toolkit.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.Toolkit.dll" SelfReg="false"/>
-    <ROW File="Xarial.XCad.Toolkit.xml" Component_="txt" FileName="XARIAL~2.XML|Xarial.XCad.Toolkit.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.Toolkit.xml" SelfReg="false"/>
-    <ROW File="Xarial.XCad.xml" Component_="txt" FileName="XARIAL~3.XML|Xarial.XCad.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Xarial.XCad.xml" SelfReg="false"/>
-    <ROW File="DuSwToglTF.dll" Component_="DuSwToglTF.dll" FileName="DUSWTO~1.DLL|DuSwToglTF.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTF.dll" SelfReg="false"/>
-    <ROW File="DuSwToglTF.dll.config" Component_="txt" FileName="DUSWTO~1.CON|DuSwToglTF.dll.config" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTF.dll.config" SelfReg="false"/>
-    <ROW File="DuSwToglTFTests.dll" Component_="DuSwToglTFTests.dll" FileName="DUSWTO~2.DLL|DuSwToglTFTests.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTFTests.dll" SelfReg="false"/>
-    <ROW File="DuSwToglTFTests.dll.config" Component_="txt" FileName="DUSWTO~2.CON|DuSwToglTFTests.dll.config" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTFTests.dll.config" SelfReg="false"/>
-    <ROW File="DuSwToglTFTests.pdb" Component_="DuSwToglTFTests.dll" FileName="DUSWTO~1.PDB|DuSwToglTFTests.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\DuSwToglTFTests.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="txt" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false"/>
-    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Newtonsoft.Json.dll" SelfReg="false"/>
-    <ROW File="Newtonsoft.Json.xml" Component_="txt" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Newtonsoft.Json.xml" SelfReg="false"/>
-    <ROW File="nunit.engine.api.dll" Component_="nunit.engine.api.dll" FileName="NUNITE~1.DLL|nunit.engine.api.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.engine.api.dll" SelfReg="false"/>
-    <ROW File="nunit.engine.dll" Component_="nunit.engine.dll" FileName="NUNITE~2.DLL|nunit.engine.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.engine.dll" SelfReg="false"/>
-    <ROW File="nunit.framework.dll" Component_="nunit.framework.dll" FileName="NUNITF~1.DLL|nunit.framework.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.framework.dll" SelfReg="false"/>
-    <ROW File="nunit.framework.pdb" Component_="nunit.framework.dll" FileName="NUNITF~1.PDB|nunit.framework.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.framework.pdb" SelfReg="false"/>
-    <ROW File="nunit.framework.xml" Component_="txt" FileName="NUNITF~1.XML|nunit.framework.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit.framework.xml" SelfReg="false"/>
-    <ROW File="NUnit3.TestAdapter.dll" Component_="NUnit3.TestAdapter.dll" FileName="NUNIT3~1.DLL|NUnit3.TestAdapter.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\NUnit3.TestAdapter.dll" SelfReg="false"/>
-    <ROW File="NUnit3.TestAdapter.pdb" Component_="NUnit3.TestAdapter.dll" FileName="NUNIT3~1.PDB|NUnit3.TestAdapter.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\NUnit3.TestAdapter.pdb" SelfReg="false"/>
-    <ROW File="nunit_random_seed.tmp" Component_="txt" FileName="NUNIT_~1.TMP|nunit_random_seed.tmp" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\nunit_random_seed.tmp" SelfReg="false"/>
-    <ROW File="SharpGLTF.Core.dll" Component_="SharpGLTF.Core.dll" FileName="SHARPG~1.DLL|SharpGLTF.Core.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SharpGLTF.Core.dll" SelfReg="false"/>
-    <ROW File="SharpGLTF.Core.pdb" Component_="SharpGLTF.Core.dll" FileName="SHARPG~1.PDB|SharpGLTF.Core.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SharpGLTF.Core.pdb" SelfReg="false"/>
-    <ROW File="SharpGLTF.Toolkit.dll" Component_="SharpGLTF.Toolkit.dll" FileName="SHARPG~2.DLL|SharpGLTF.Toolkit.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SharpGLTF.Toolkit.dll" SelfReg="false"/>
-    <ROW File="SharpGLTF.Toolkit.pdb" Component_="SharpGLTF.Toolkit.dll" FileName="SHARPG~2.PDB|SharpGLTF.Toolkit.pdb" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\SharpGLTF.Toolkit.pdb" SelfReg="false"/>
-    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~2.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Buffers.dll" SelfReg="false"/>
-    <ROW File="System.Buffers.xml" Component_="txt" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Buffers.xml" SelfReg="false"/>
-    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Memory.dll" SelfReg="false"/>
-    <ROW File="System.Memory.xml" Component_="txt" FileName="SYSTEM~2.XML|System.Memory.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Memory.xml" SelfReg="false"/>
-    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Numerics.Vectors.dll" SelfReg="false"/>
-    <ROW File="System.Numerics.Vectors.xml" Component_="txt" FileName="SYSTEM~3.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Numerics.Vectors.xml" SelfReg="false"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="txt" FileName="SYSTEM~4.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
-    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Text.Encodings.Web.dll" SelfReg="false"/>
-    <ROW File="System.Text.Encodings.Web.xml" Component_="txt" FileName="SYSTEM~5.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Text.Encodings.Web.xml" SelfReg="false"/>
-    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~7.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Text.Json.dll" SelfReg="false"/>
-    <ROW File="System.Text.Json.xml" Component_="txt" FileName="SYSTEM~6.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Text.Json.xml" SelfReg="false"/>
-    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
-    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="txt" FileName="SYSTEM~7.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
-    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~9.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.ValueTuple.dll" SelfReg="false"/>
-    <ROW File="System.ValueTuple.xml" Component_="txt" FileName="SYSTEM~8.XML|System.ValueTuple.xml" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\System.ValueTuple.xml" SelfReg="false"/>
-    <ROW File="RegAsm.exe" Component_="RegAsm.exe" FileName="RegAsm.exe" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\RegAsm.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="Install.bat" Component_="txt" FileName="Install.bat" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\Install.bat" SelfReg="false"/>
-    <ROW File="UnInstall.bat" Component_="txt" FileName="UNINST~1.BAT|UnInstall.bat" Attributes="0" SourcePath="..\..\DuSwToglTF\bin\UnInstall.bat" SelfReg="false"/>
+    <ROW File="CommonServiceLocator.dll" Component_="CommonServiceLocator.dll" FileName="COMMON~1.DLL|CommonServiceLocator.dll" Attributes="0" SourcePath="..\..\bin\CommonServiceLocator.dll" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.dll" Component_="GalaSoft.MvvmLight.dll" FileName="GALASO~1.DLL|GalaSoft.MvvmLight.dll" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.dll" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Extras.dll" Component_="GalaSoft.MvvmLight.Extras.dll" FileName="GALASO~2.DLL|GalaSoft.MvvmLight.Extras.dll" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.Extras.dll" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Extras.pdb" Component_="GalaSoft.MvvmLight.Extras.dll" FileName="GALASO~1.PDB|GalaSoft.MvvmLight.Extras.pdb" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.Extras.pdb" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Extras.xml" Component_="txt" FileName="GALASO~1.XML|GalaSoft.MvvmLight.Extras.xml" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.Extras.xml" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.pdb" Component_="GalaSoft.MvvmLight.dll" FileName="GALASO~2.PDB|GalaSoft.MvvmLight.pdb" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.pdb" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Platform.dll" Component_="GalaSoft.MvvmLight.Platform.dll" FileName="GALASO~3.DLL|GalaSoft.MvvmLight.Platform.dll" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.Platform.dll" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Platform.pdb" Component_="GalaSoft.MvvmLight.Platform.dll" FileName="GALASO~3.PDB|GalaSoft.MvvmLight.Platform.pdb" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.Platform.pdb" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.Platform.xml" Component_="txt" FileName="GALASO~2.XML|GalaSoft.MvvmLight.Platform.xml" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.Platform.xml" SelfReg="false"/>
+    <ROW File="GalaSoft.MvvmLight.xml" Component_="txt" FileName="GALASO~3.XML|GalaSoft.MvvmLight.xml" Attributes="0" SourcePath="..\..\bin\GalaSoft.MvvmLight.xml" SelfReg="false"/>
+    <ROW File="SolidWorks.Interop.sldworks.dll" Component_="SolidWorks.Interop.sldworks.dll" FileName="SOLIDW~1.DLL|SolidWorks.Interop.sldworks.dll" Attributes="0" SourcePath="..\..\bin\SolidWorks.Interop.sldworks.dll" SelfReg="false"/>
+    <ROW File="SolidWorks.Interop.swconst.dll" Component_="SolidWorks.Interop.swconst.dll" FileName="SOLIDW~2.DLL|SolidWorks.Interop.swconst.dll" Attributes="0" SourcePath="..\..\bin\SolidWorks.Interop.swconst.dll" SelfReg="false"/>
+    <ROW File="SolidWorks.Interop.swpublished.dll" Component_="SolidWorks.Interop.swpublished.dll" FileName="SOLIDW~3.DLL|SolidWorks.Interop.swpublished.dll" Attributes="0" SourcePath="..\..\bin\SolidWorks.Interop.swpublished.dll" SelfReg="false"/>
+    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.dll" Attributes="0" SourcePath="..\..\bin\System.Windows.Interactivity.dll" SelfReg="false"/>
+    <ROW File="Xarial.XCad.dll" Component_="Xarial.XCad.dll" FileName="XARIAL~1.DLL|Xarial.XCad.dll" Attributes="0" SourcePath="..\..\bin\Xarial.XCad.dll" SelfReg="false"/>
+    <ROW File="Xarial.XCad.SolidWorks.dll" Component_="Xarial.XCad.SolidWorks.dll" FileName="XARIAL~2.DLL|Xarial.XCad.SolidWorks.dll" Attributes="0" SourcePath="..\..\bin\Xarial.XCad.SolidWorks.dll" SelfReg="false"/>
+    <ROW File="Xarial.XCad.SolidWorks.xml" Component_="txt" FileName="XARIAL~1.XML|Xarial.XCad.SolidWorks.xml" Attributes="0" SourcePath="..\..\bin\Xarial.XCad.SolidWorks.xml" SelfReg="false"/>
+    <ROW File="Xarial.XCad.Toolkit.dll" Component_="Xarial.XCad.Toolkit.dll" FileName="XARIAL~3.DLL|Xarial.XCad.Toolkit.dll" Attributes="0" SourcePath="..\..\bin\Xarial.XCad.Toolkit.dll" SelfReg="false"/>
+    <ROW File="Xarial.XCad.Toolkit.xml" Component_="txt" FileName="XARIAL~2.XML|Xarial.XCad.Toolkit.xml" Attributes="0" SourcePath="..\..\bin\Xarial.XCad.Toolkit.xml" SelfReg="false"/>
+    <ROW File="Xarial.XCad.xml" Component_="txt" FileName="XARIAL~3.XML|Xarial.XCad.xml" Attributes="0" SourcePath="..\..\bin\Xarial.XCad.xml" SelfReg="false"/>
+    <ROW File="DuSwToglTF.dll" Component_="DuSwToglTF.dll" FileName="DUSWTO~1.DLL|DuSwToglTF.dll" Attributes="0" SourcePath="..\..\bin\DuSwToglTF.dll" SelfReg="false"/>
+    <ROW File="DuSwToglTF.dll.config" Component_="txt" FileName="DUSWTO~1.CON|DuSwToglTF.dll.config" Attributes="0" SourcePath="..\..\bin\DuSwToglTF.dll.config" SelfReg="false"/>
+    <ROW File="DuSwToglTFTests.dll" Component_="DuSwToglTFTests.dll" FileName="DUSWTO~2.DLL|DuSwToglTFTests.dll" Attributes="0" SourcePath="..\..\bin\DuSwToglTFTests.dll" SelfReg="false"/>
+    <ROW File="DuSwToglTFTests.dll.config" Component_="txt" FileName="DUSWTO~2.CON|DuSwToglTFTests.dll.config" Attributes="0" SourcePath="..\..\bin\DuSwToglTFTests.dll.config" SelfReg="false"/>
+    <ROW File="DuSwToglTFTests.pdb" Component_="DuSwToglTFTests.dll" FileName="DUSWTO~1.PDB|DuSwToglTFTests.pdb" Attributes="0" SourcePath="..\..\bin\DuSwToglTFTests.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\..\bin\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="txt" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\..\bin\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\bin\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="txt" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\..\bin\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="nunit.engine.api.dll" Component_="nunit.engine.api.dll" FileName="NUNITE~1.DLL|nunit.engine.api.dll" Attributes="0" SourcePath="..\..\bin\nunit.engine.api.dll" SelfReg="false"/>
+    <ROW File="nunit.engine.dll" Component_="nunit.engine.dll" FileName="NUNITE~2.DLL|nunit.engine.dll" Attributes="0" SourcePath="..\..\bin\nunit.engine.dll" SelfReg="false"/>
+    <ROW File="nunit.framework.dll" Component_="nunit.framework.dll" FileName="NUNITF~1.DLL|nunit.framework.dll" Attributes="0" SourcePath="..\..\bin\nunit.framework.dll" SelfReg="false"/>
+    <ROW File="nunit.framework.pdb" Component_="nunit.framework.dll" FileName="NUNITF~1.PDB|nunit.framework.pdb" Attributes="0" SourcePath="..\..\bin\nunit.framework.pdb" SelfReg="false"/>
+    <ROW File="nunit.framework.xml" Component_="txt" FileName="NUNITF~1.XML|nunit.framework.xml" Attributes="0" SourcePath="..\..\bin\nunit.framework.xml" SelfReg="false"/>
+    <ROW File="NUnit3.TestAdapter.dll" Component_="NUnit3.TestAdapter.dll" FileName="NUNIT3~1.DLL|NUnit3.TestAdapter.dll" Attributes="0" SourcePath="..\..\bin\NUnit3.TestAdapter.dll" SelfReg="false"/>
+    <ROW File="NUnit3.TestAdapter.pdb" Component_="NUnit3.TestAdapter.dll" FileName="NUNIT3~1.PDB|NUnit3.TestAdapter.pdb" Attributes="0" SourcePath="..\..\bin\NUnit3.TestAdapter.pdb" SelfReg="false"/>
+    <ROW File="nunit_random_seed.tmp" Component_="txt" FileName="NUNIT_~1.TMP|nunit_random_seed.tmp" Attributes="0" SourcePath="..\..\bin\nunit_random_seed.tmp" SelfReg="false"/>
+    <ROW File="SharpGLTF.Core.dll" Component_="SharpGLTF.Core.dll" FileName="SHARPG~1.DLL|SharpGLTF.Core.dll" Attributes="0" SourcePath="..\..\bin\SharpGLTF.Core.dll" SelfReg="false"/>
+    <ROW File="SharpGLTF.Core.pdb" Component_="SharpGLTF.Core.dll" FileName="SHARPG~1.PDB|SharpGLTF.Core.pdb" Attributes="0" SourcePath="..\..\bin\SharpGLTF.Core.pdb" SelfReg="false"/>
+    <ROW File="SharpGLTF.Toolkit.dll" Component_="SharpGLTF.Toolkit.dll" FileName="SHARPG~2.DLL|SharpGLTF.Toolkit.dll" Attributes="0" SourcePath="..\..\bin\SharpGLTF.Toolkit.dll" SelfReg="false"/>
+    <ROW File="SharpGLTF.Toolkit.pdb" Component_="SharpGLTF.Toolkit.dll" FileName="SHARPG~2.PDB|SharpGLTF.Toolkit.pdb" Attributes="0" SourcePath="..\..\bin\SharpGLTF.Toolkit.pdb" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~2.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\..\bin\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.xml" Component_="txt" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\..\bin\System.Buffers.xml" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\..\bin\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Memory.xml" Component_="txt" FileName="SYSTEM~2.XML|System.Memory.xml" Attributes="0" SourcePath="..\..\bin\System.Memory.xml" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\..\bin\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.xml" Component_="txt" FileName="SYSTEM~3.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\..\bin\System.Numerics.Vectors.xml" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\bin\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="txt" FileName="SYSTEM~4.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\..\bin\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\..\bin\System.Text.Encodings.Web.dll" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.xml" Component_="txt" FileName="SYSTEM~5.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\..\bin\System.Text.Encodings.Web.xml" SelfReg="false"/>
+    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~7.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\..\bin\System.Text.Json.dll" SelfReg="false"/>
+    <ROW File="System.Text.Json.xml" Component_="txt" FileName="SYSTEM~6.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\..\bin\System.Text.Json.xml" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\..\bin\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="txt" FileName="SYSTEM~7.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\..\bin\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~9.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\bin\System.ValueTuple.dll" SelfReg="false"/>
+    <ROW File="System.ValueTuple.xml" Component_="txt" FileName="SYSTEM~8.XML|System.ValueTuple.xml" Attributes="0" SourcePath="..\..\bin\System.ValueTuple.xml" SelfReg="false"/>
+    <ROW File="RegAsm.exe" Component_="RegAsm.exe" FileName="RegAsm.exe" Attributes="0" SourcePath="..\..\bin\RegAsm.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="Install.bat" Component_="txt" FileName="Install.bat" Attributes="0" SourcePath="..\..\bin\Install.bat" SelfReg="false"/>
+    <ROW File="UnInstall.bat" Component_="txt" FileName="UNINST~1.BAT|UnInstall.bat" Attributes="0" SourcePath="..\..\bin\UnInstall.bat" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -145,7 +145,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="zh;en" LangOpt="1" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64" UACExecutionLevel="2"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="..\..\..\SolidWorksLookup\Installer\Setup Files" Languages="zh;en" LangOpt="1" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64" UACExecutionLevel="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -188,7 +188,7 @@
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
-    <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="55" Y="110" Width="372" Height="180" Attributes="3" Property="EulaRead" Text="..\..\DuSwToglTF\Installer\License.rtf" Order="800" MsiKey="LicenseAgreementDlg#AgreementText"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="55" Y="110" Width="372" Height="180" Attributes="3" Property="EulaRead" Text="..\License.rtf" Order="800" MsiKey="LicenseAgreementDlg#AgreementText"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
@@ -356,6 +356,6 @@
     <ROW SearchKey="A6D7F21EAEB4C4A901F0979CF110936Release" Prereq="A6D7F21EAEB4C4A901F0979CF110936" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G461813" Order="1" Property="PreReqSearch_A6D7F21EAEB4C4A901F097"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
-    <ROW Directory_="APPDIR" SourcePath="..\..\DuSwToglTF\bin" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6"/>
+    <ROW Directory_="APPDIR" SourcePath="..\..\bin" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6"/>
   </COMPONENT>
 </DOCUMENT>
