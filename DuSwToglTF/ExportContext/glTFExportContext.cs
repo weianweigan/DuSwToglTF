@@ -78,9 +78,9 @@ namespace DuSwToglTF.ExportContext
             action?.Invoke(filePathName);
         }
 
-        public void OnBodyBegin(IBody2 body,MaterialBuilder docMatBuilder,Matrix4x4 postion)
+        public void OnBodyBegin(IBody2 body,MaterialBuilder docMatBuilder,Matrix4x4 postion,string name = null)
         {
-            _sceneBuilder.AddRigidMesh(body.GetBodyMeshBuilder(docMatBuilder),postion);
+            _sceneBuilder.AddRigidMesh(body.GetBodyMeshBuilder(docMatBuilder),name,postion);
         }
 
         public void WithDocCustomProperties(CustomPropertyGroup customPropertyGroup)

@@ -11,21 +11,20 @@ namespace DuSwToglTF.DataModel
 
         public IBody2 Body { get; }
 
+        public string ComponentName { get; }
+
         public Matrix4x4 Location { get; }
 
         public MaterialBuilder BodyMaterialBuilder { get => _material ?? Body.GetMaterialBuilder(); }
 
-        public BodyDataModel(IBody2 body, Matrix4x4 location)
+        public BodyDataModel(IBody2 body, Matrix4x4 location,MaterialBuilder material = null,string componentName = null)
         {
-            Body = body;
-            Location = location;
+            this.Body = body;
+            this.Location = location;
+            this._material = material;
+            this.ComponentName = componentName;
         }
 
-        public BodyDataModel(IBody2 body, Matrix4x4 location,MaterialBuilder material)
-        {
-            Body = body;
-            Location = location;
-            this._material = material;
-        }
+        public override string ToString() => $"{ComponentName}:{Body?.Name}";
     }
 }

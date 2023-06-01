@@ -52,7 +52,7 @@ namespace DuSwToglTF.Extension
 
                         foreach (IBody2 body in bodies)
                         {
-                            yield return new BodyDataModel(body, loc,compMaterial);
+                            yield return new BodyDataModel(body, loc,compMaterial,comp.Name2);
                         }
                     }
 

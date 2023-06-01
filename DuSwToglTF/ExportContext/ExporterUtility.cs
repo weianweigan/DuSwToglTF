@@ -36,7 +36,7 @@ namespace DuSwToglTF.ExportContext
                     int progressValue = (80 / count) * (i++) + 10;
                     progressAction?.Invoke(progressValue, $"Progress SolidBody {item.Body.Name}...");
 
-                    context.OnBodyBegin(item.Body, item.BodyMaterialBuilder ?? material, item.Location);
+                    context.OnBodyBegin(item.Body, item.BodyMaterialBuilder ?? material, item.Location,item.ToString());
 
                     progressAction?.Invoke(progressValue, $"Finish SolidBody {item.Body.Name}...");
                 }
