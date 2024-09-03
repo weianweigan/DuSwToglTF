@@ -1,6 +1,6 @@
-# Can solidworks export glb files?
+# Can solidworks export glb files?⚠️
 
-> Yes, SolidWorks now natively supports exporting GLB files, so this repository is no longer maintained. For instructions on how to export GLB files using SolidWorks, please refer to a tutorial.
+> Yes, SolidWorks now natively supports exporting GLB files, so this repository is no longer maintained⚠️. For instructions on how to export GLB files using SolidWorks, please refer to a tutorial.
 
 
 [**How to export glb files?**](https://blog.dududu.space/archives/can-solidworks-export-glb-files)
